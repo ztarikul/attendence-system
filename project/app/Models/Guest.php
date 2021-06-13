@@ -9,7 +9,7 @@ class Guest extends Model
 {
     use HasFactory;
 
-    public function employee(){
-        return $this->belongsTo('App\Models\Employee');
+    public function user(){
+        return $this->belongsTo('App\Models\User');
     }
 }

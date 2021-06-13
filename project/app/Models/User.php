@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Post;
+use App\Models\Guest;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -60,5 +61,9 @@ class User extends Authenticatable
             return true;
         }
         return false;
+    }
+
+    public function guest(){
+        return $this->hasMany(Guest::class);
     }
 }

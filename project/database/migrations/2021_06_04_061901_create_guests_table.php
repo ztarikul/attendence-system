@@ -16,10 +16,10 @@ class CreateGuestsTable extends Migration
         Schema::create('guests', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('employee_id')->constrained()->onDelete('cascade');
-            $table->string('guest_ref_id'); 
+            $table->string('emp_ref_id'); 
             $table->string('guest_picture')->nullable();
             $table->string('employee_name');
+            $table->string('guest_status');
             $table->timestamps();
         });
     }
