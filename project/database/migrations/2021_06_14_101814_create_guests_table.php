@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEmployeesTable extends Migration
+class CreateGuestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateEmployeesTable extends Migration
      */
     public function up()
     {
-        Schema::create('employees', function (Blueprint $table) {
+        Schema::create('guests', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('name');
-            $table->string('emp_ref_id');
-            $table->string('image')->nullable();
-            // $table->string('check_in');
-            // $table->string('check_out')->nullable();
+            $table->string('user_ref_id')->nullable();
+            $table->string('user_name')->nullable();
+            $table->string('phone_number');
+            $table->text('guest_image')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class CreateEmployeesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('employees');
+        Schema::dropIfExists('guests');
     }
 }
