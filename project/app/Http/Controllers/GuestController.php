@@ -16,6 +16,22 @@ class GuestController extends Controller
         //
     }
 
+    public function employeeindex()
+    {
+        //
+        return view('admin.guests.setup');
+    }
+    public function managementindex()
+    {
+        //
+        return view('admin.guests.management');
+    }
+    public function specialindex()
+    {
+        //
+        return view('admin.guests.special');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

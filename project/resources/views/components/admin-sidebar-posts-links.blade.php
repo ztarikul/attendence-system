@@ -33,7 +33,7 @@
       <h6 class="collapse-header">Admin:</h6>
       <!-- @if(auth()->user()->userHasRole('Admin')) -->
       <a class="collapse-item" href="">Dashboard</a>
-      <a class="collapse-item" href="">Reports</a>
+      <a class="collapse-item" href="{{route('admin.reports')}}">Reports</a>
       <!-- @endif -->
     </div>
   </div>
@@ -48,7 +48,7 @@
   <div id="collapsedatareport" class="collapse" aria-labelledby="headingdatareport" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Report:</h6>
-      <!-- @if(auth()->user()->userHasRole('Admin')) -->
+       @if(auth()->user()->userHasRole('Admin')) -->
       <!-- <a class="collapse-item" href="">Today's Report</a>
       <a class="collapse-item" href="">Random Report</a> -->
       <!-- @endif -->

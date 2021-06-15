@@ -1,10 +1,11 @@
 <x-admin-master>
 @section('content')
+@if(auth()->user()->userHasRole('Manager'))
 <h1 style="color:blue">Employee</h1>
 
 <div class="row">
 <div class="col-sm-6">
-<form  method="post" action="{{route('guest.store')}}" enctype="multipart/form-data">
+<form  method="post" action="" enctype="multipart/form-data">
 @csrf
 <div class="form-group" style="color:black;">
     <label for="title"><b>Name</b></label>
@@ -63,6 +64,7 @@
 
 </div>
 
+@endif
 @endsection 
 
 </x-admin-master>

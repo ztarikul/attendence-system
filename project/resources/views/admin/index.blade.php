@@ -35,9 +35,16 @@
 @if(auth()->user()->userHasRole('Manager'))
 
 
-<a href=""><button class="btn">Employee Guest</button></a>
-<a href=""><button class="btn"> Management Guest</button></a>
-<a href=""><button class="btn"> Special Guest</button></a>
+<a href="{{route('guest.employee')}}"><button class="btn">Employee Guest</button></a>
+<a href="{{route('guest.management')}}"><button class="btn"> Management Guest</button></a>
+<a href="{{route('guest.special')}}"><button class="btn"> Special Guest</button></a>
+@endif
+
+
+@if(auth()->user()->userHasRole('Admin'))
+
+
+
 @endif
 
 </body>

@@ -85,7 +85,13 @@ Route::get('/print_page', [InvoiceController::class, 'print_page'])->name('print
 
 
 
+Route::get('/admin_reports', [AdminController::class, 'admin_reports'])->name('admin.reports');
+
+
 Route::resource('guest', GuestController::class);
+Route::get('/employee', 'GuestController@employeeindex')->name('guest.employee');
+Route::get('/management', 'GuestController@managementindex')->name('guest.management');
+Route::get('/special', 'GuestController@specialindex')->name('guest.special');
 
 Route::resource('guest', AttendanceController::class);
 
