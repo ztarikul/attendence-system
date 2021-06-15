@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Guest;
 
 use Illuminate\Http\Request;
 
@@ -53,20 +54,17 @@ class GuestController extends Controller
     public function store(Request $request)
     {
         //
-        dd($request);
-
-        $this->validate( $request, [
-            'phone_number' => 'required',
-            'name' => 'required'
+        // dd($request);
+        $inputs = request()->validate([
+            'user_id' => 'required',
+            'name'=>'required',
+            'phone_number' => 'required'
         ]);
+        $inputs['user_ref_id'] = $request['user_ref_id'];
 
-        $comment = new Comment([
-            'user_id' => $post_id,
-            // 'post_id' => 1,
-            'user_id' => auth()->user()->id,
-            'comment_body' => $request->get('comment_body'),
-            
-        ]);
+        $guest = new Guest($inputs);
+        
+        $guest->save();
     }
 
     /**
