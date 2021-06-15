@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\InvoiceController;
@@ -83,6 +84,10 @@ Route::get('/emp_print/{id}', [InvoiceController::class, 'emp_data_print'])->nam
 Route::get('/print_page', [InvoiceController::class, 'print_page'])->name('print.page');
 
 
+
+Route::resource('guest', GuestController::class);
+
+Route::resource('guest', AttendanceController::class);
 
 
 });

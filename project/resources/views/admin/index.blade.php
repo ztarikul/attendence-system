@@ -2,7 +2,7 @@
     @section('content')
 
 
-        @if(auth()->user()->userHasRole('Admin'))
+        
         <h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
 
         <!DOCTYPE html>
@@ -32,13 +32,13 @@
 </head>
 <body>
 
+@if(auth()->user()->userHasRole('Manager'))
 
-<h2 style="color:black"><b>Manager</b></h2>
 
 <a href=""><button class="btn">Employee Guest</button></a>
 <a href=""><button class="btn"> Management Guest</button></a>
 <a href=""><button class="btn"> Special Guest</button></a>
-
+@endif
 
 </body>
 </html>
@@ -55,7 +55,7 @@
 
 
 
-        @endif
+       
 
 
     @endsection
