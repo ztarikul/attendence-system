@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 
 use Illuminate\Http\Request;
 
@@ -19,7 +20,8 @@ class GuestController extends Controller
     public function employeeindex()
     {
         //
-        return view('admin.guests.setup');
+        $users = User::all();
+        return view('admin.guests.employee_guest', ['users' => $users]);
     }
     public function managementindex()
     {
@@ -51,6 +53,20 @@ class GuestController extends Controller
     public function store(Request $request)
     {
         //
+        dd($request);
+
+        $this->validate( $request, [
+            'phone_number' => 'required',
+            'name' => 'required'
+        ]);
+
+        $comment = new Comment([
+            'user_id' => $post_id,
+            // 'post_id' => 1,
+            'user_id' => auth()->user()->id,
+            'comment_body' => $request->get('comment_body'),
+            
+        ]);
     }
 
     /**
