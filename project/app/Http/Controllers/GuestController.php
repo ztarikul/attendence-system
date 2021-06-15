@@ -27,12 +27,14 @@ class GuestController extends Controller
     public function managementindex()
     {
         //
-        return view('admin.guests.management');
+        $users = User::all();
+        return view('admin.guests.management', ['users' => $users]);
     }
     public function specialindex()
     {
         //
-        return view('admin.guests.special');
+        $users = User::all();
+        return view('admin.guests.special', ['users' => $users]);
     }
 
     /**
