@@ -20,7 +20,8 @@
   <link href="{{asset('css/sb-admin-2.css')}}" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-webcam/1.0.0/jquery.webcam.js"></script>
 
-
+  <script type="text/javascript" src="/jss/webcam.min.js"></script>
+  <script type="text/javascript" src="/jss/webcam.js"></script>
 
 
  

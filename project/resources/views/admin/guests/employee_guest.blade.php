@@ -44,13 +44,17 @@
 
     <div class="form-group" style="color:black;">
     
-        <input type="hidden"  style="width:50%" class="form-control" name="emp_guest" value="emp_guest" id="title" aria-describedby="" placeholder="Enter Guest Status">
+        <input type="hidden"  style="width:50%" class="form-control" name="guest_status" value="emp_guest" id="title" aria-describedby="" placeholder="Enter Guest Status">
     </div>
 
 
     <div class="form-group" style="color:black;">
         <label for="file"><b>Image</b></label>
         <input type="file"   style="width:50%" class="form-control" name="guest_image" id="guest_image">
+    </div>
+
+    <div class="col">
+	      <input type=button value="Take Snapshot" onClick="take_snapshot()" style="float:left; width:180px; height:40px;"/>
     </div>
 
 
