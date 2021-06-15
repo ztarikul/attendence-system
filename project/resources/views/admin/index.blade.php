@@ -35,9 +35,9 @@
 
 <h2 style="color:black"><b>Manager</b></h2>
 
-<a href="{{route('guest.create')}}"><button class="btn">Employee Guest</button></a>
-<a href="{{route('guest.management')}}"><button class="btn"> Management Guest</button></a>
-<a href="{{route('guest.special')}}"><button class="btn"> Special Guest</button></a>
+<a href=""><button class="btn">Employee Guest</button></a>
+<a href=""><button class="btn"> Management Guest</button></a>
+<a href=""><button class="btn"> Special Guest</button></a>
 
 
 </body>

@@ -40,14 +40,11 @@
 
           @if(Auth::check())
           <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.index')}}">Admin</a>
+            <a class="nav-link" href="{{route('admin.index')}}">Dashboard</a>
           </li>
 
           @else
 
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
 
           @endif
 
