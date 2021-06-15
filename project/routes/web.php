@@ -78,7 +78,7 @@ Route::post('/user_role_deleted/{user}', [RoleController::class, 'user_role_dele
 
 Route::resource('category', CategoryController::class);
 
-Route::resource('employee', EmployeeController::class);
+// Route::resource('employee', EmployeeController::class);
 
 Route::get('/emp_print/{id}', [InvoiceController::class, 'emp_data_print'])->name('emp_data_print');
 Route::get('/print_page', [InvoiceController::class, 'print_page'])->name('print.page');
@@ -89,11 +89,12 @@ Route::get('/admin_reports', [AdminController::class, 'admin_reports'])->name('a
 
 
 Route::resource('guest', GuestController::class);
-Route::get('/employee', 'GuestController@employeeindex')->name('guest.employee');
+
+Route::get('/guest_employee', 'GuestController@employeeindex')->name('guest.employee');
 Route::get('/management', 'GuestController@managementindex')->name('guest.management');
 Route::get('/special', 'GuestController@specialindex')->name('guest.special');
 
-Route::resource('guest', AttendanceController::class);
+Route::resource('attendance', AttendanceController::class);
 
 
 });
