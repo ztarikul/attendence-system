@@ -90,13 +90,13 @@ class EmployeeController extends Controller
             'department'=> 'required',
             'designation'=> 'required',
             'email'=> 'required',
-            'phone_number'=> 'required'  
+            'phone_number'=> 'required',  
             
         ]);
          
-        // if(request('emp_image')){
-        //     $user['emp_image'] = request('emp_image')->update('images');
-        // }
+        if(request('emp_image')){
+            $user['emp_image'] = request('emp_image')->update('images');
+        }
 
 
         $user->update($request->all());
