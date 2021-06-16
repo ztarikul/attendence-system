@@ -51,11 +51,11 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="{{route('admin.index')}}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
-      </li>
+      </li> -->
 
       <!-- Divider -->
       <!-- <hr class="sidebar-divider"> -->
@@ -134,7 +134,7 @@
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
         <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button style="height=10px;weight=20px; cursor: pointer;" type="submit">Search</button>
+                <button style="height=10px;weight=20px; cursor: pointer;background-color:black; color:white; " type="submit">Search</button>
               </form>
 
           <!-- Sidebar Toggle (Topbar) -->
