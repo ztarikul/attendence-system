@@ -90,13 +90,13 @@
 
 <div class="row">
   <div class="col-sm-4">
-    <a href=""><button style="width: 70%" class="btn1">30</button></a>
+    <a href=""><button style="width: 70%" class="btn1">{{$employee_guests->count()}}</button></a>
   </div>
   <div class="col-sm-4">
-  <a href=""><button style="width: 70%" class="btn1"> 15</button></a>
+  <a href=""><button style="width: 70%" class="btn1"> {{$management_guests->count()}}</button></a>
   </div>
   <div class="col-sm-4">
-  <a href=""><button style="width: 70%" class="btn1"> 5</button></a>
+  <a href=""><button style="width: 70%" class="btn1"> {{$special_guests->count()}}</button></a>
   </div>
 </div>
 
@@ -109,20 +109,20 @@
 <div class="column1">
     <div class="card1">
       <h1><b>Total Guest</b></h1>
-      <h1 style="margin-left: 300px;">265</h1>
+      <h1 style="margin-left: 300px;">{{$today_total_guests->count()}}</h1>
     </div>
   </div>
 
 
 <div class="row">
   <div class="col-sm-4">
-    <a href=""><button style="width: 70%" class="btn1">30</button></a>
+    <a href=""><button style="width: 70%" class="btn1">{{$employee_guests->count()}}</button></a>
   </div>
   <div class="col-sm-4">
-  <a href=""><button style="width: 70%" class="btn1"> 15</button></a>
+  <a href=""><button style="width: 70%" class="btn1">{{$management_guests->count()}}</button></a>
   </div>
   <div class="col-sm-4">
-  <a href=""><button style="width: 70%" class="btn1"> 5</button></a>
+  <a href=""><button style="width: 70%" class="btn1">{{$special_guests->count()}}</button></a>
   </div>
 </div>
 
