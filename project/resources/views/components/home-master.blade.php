@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Blog Home - Start Bootstrap Template</title>
+  <title>Globe Ltd.</title>
 
   <!-- Bootstrap core CSS -->
   <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -26,7 +26,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="{{route('home')}}">Start Bootstrap</a>
+      <a class="navbar-brand" href="">ATTENDANCE  SYSTEM</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -66,26 +66,26 @@
   </nav>
 
   <!-- Page Content -->
-  <div class="container">
-
-    <div class="row">
+  <!-- <div class="container"> -->
+<!-- 
+    <div class="row"> -->
 
       <!-- Blog Entries Column -->
-      <div class="col-md-8">
+      <!-- <div class="col-md-8"> -->
 
-        @yield('content')
-      </div>
+        
+      <!-- </div> -->
 
       <!-- Sidebar Widgets Column -->
-      <div class="col-md-4">
+      <!-- <div class="col-md-4">
 
-        <!-- Search Widget -->
-        <div class="card my-4">
+        Search Widget -->
+        <!-- <div class="card my-4">
           <h5 class="card-header">Search</h5>
           <form method="post" action="{{route('search_post')}}">
-          <div class="card-body">
-          @csrf
-            <div class="input-group">
+          <div class="card-body"> -->
+          <!-- @csrf -->
+            <!-- <div class="input-group">
               <input type="text" name="search_post" class="form-control" placeholder="Search for...">
               <span class="input-group-btn">
                 <button class="btn btn-secondary" type="submit">Go!</button>
@@ -93,47 +93,22 @@
             </div>
           </form>
           </div>
-        </div>
+        </div> -->
 
         <!-- Categories Widget -->
-        <div class="card my-4">
+        <!-- <div class="card my-4">
           <h5 class="card-header">Categories</h5>
           <div class="card-body">
             <div class="row">
               <div class="col-lg-6">
-                <ul class="list-unstyled mb-0">
+                <ul class="list-unstyled mb-0"> -->
 
 
                 <!-- Categories List -->
-                <?php
-                  $categories = App\Models\Category::all();
-                ?>
-                @foreach($categories as $category)
-                  <li>
-                  <a href="#">{{$category->name}}</a>
-                  </li>
-                @endforeach
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#">JavaScript</a>
-                  </li>
-                  <li>
-                    <a href="#">CSS</a>
-                  </li>
-                  <li>
-                    <a href="#">Tutorials</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+               
 
         <!-- Side Widget -->
-        <div class="card my-4">
+        <!-- <div class="card my-4">
           <h5 class="card-header">Side Widget</h5>
           <div class="card-body">
             You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
@@ -142,19 +117,19 @@
 
       </div>
 
-    </div>
+    </div> -->
     <!-- /.row -->
 
-  </div>
+  <!-- </div> -->
   <!-- /.container -->
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
+  <!-- <footer class="py-5 bg-dark">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
     </div>
-    <!-- /.container -->
-  </footer>
+  
+  </footer> -->
 
   <!-- Bootstrap core JavaScript -->
   <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>

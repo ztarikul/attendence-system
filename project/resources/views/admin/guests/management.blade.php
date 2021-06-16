@@ -16,6 +16,17 @@
 
 
 <div class="form-group" style="color:black;">
+<label for="title"><b>Phone Number</b></label>
+<input type="text"  style="width:50%" class="form-control" name="management_phonenumber" id="title" aria-describedby="" placeholder="Enter management phone number">
+</div>
+
+<div class="form-group" style="color:black;">
+        <label for="file"><b>Image</b></label>
+        <input type="file"   style="width:50%" class="form-control" name="guest_image" id="guest_image">
+</div>
+
+
+<div class="form-group" style="color:black;">
 
 <input type="hidden"  style="width:50%" class="form-control" name="emp_guest" value="emp_guest" id="title" aria-describedby="" placeholder="Enter Guest Status">
 </div>

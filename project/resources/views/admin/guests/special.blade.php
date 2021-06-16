@@ -9,6 +9,18 @@
 <input type="text" style="width:50%" class="form-control" name="name" id="title" aria-describedby="" placeholder="Enter name">
 </div>
 
+<div class="form-group" style="color:black;">
+<label for="title"><b>Phone Number</b></label>
+<input type="text"  style="width:50%" class="form-control" name="special_phonenumber" id="title" aria-describedby="" placeholder="Enter special phone number">
+</div>
+
+<div class="form-group" style="color:black;">
+<label for="file"><b>Image</b></label>
+<input type="file"   style="width:50%" class="form-control" name="guest_image" id="guest_image">
+</div>
+
+
+
 
 <div class="form-group" style="color:black;">
 
