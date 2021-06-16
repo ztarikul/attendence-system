@@ -86,6 +86,7 @@ Route::get('/print_page', [InvoiceController::class, 'print_page'])->name('print
 
 
 Route::get('/admin_reports', [AdminController::class, 'admin_reports'])->name('admin.reports');
+Route::post('/report_generates', [AdminController::class, 'report_generates'])->name('report.generates');
 
 
 Route::resource('guest', GuestController::class);

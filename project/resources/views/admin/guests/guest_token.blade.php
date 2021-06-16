@@ -10,11 +10,11 @@
 </head>
 
 <style>
-@page{
+/* @page{
     width: 80mm;
     height: 100mm;
     margin:0;
-}
+} */
 
 </style>
 

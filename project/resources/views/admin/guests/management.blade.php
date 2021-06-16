@@ -41,7 +41,7 @@
 
 <div class="form-group" style="color:black;">
 
-<input type="hidden"  style="width:50%" class="form-control" name="guest_status" value="management__guest" id="title" aria-describedby="" placeholder="Enter Guest Status">
+<input type="hidden"  style="width:50%" class="form-control" name="guest_status" value="management_guest" id="title" aria-describedby="" placeholder="Enter Guest Status">
 </div>
 <div class="wsite-form-radio-container">
 
