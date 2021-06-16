@@ -7,7 +7,7 @@
 <!-- Blog Post -->
 
 
-<table class="table table-dark table-striped">
+<table class="table table-blue table-striped">
 <thead>
 <tr>
 
@@ -27,7 +27,7 @@
       <td>{{$guest->user_ref_id}}</td>
       <td>{{$guest->user_name}}</td>
       <td>{{$guest->phone_number}}</td>
-      <td><img width="100" height="100" src="/storage/{{$guest->guest_image}}"></td>
+      <td><img width="50" height="50" src="/storage/{{$guest->guest_image}}"></td>
       <td>{{$guest->created_at}}</td>
      
 

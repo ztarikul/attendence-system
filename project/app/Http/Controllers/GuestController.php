@@ -5,6 +5,8 @@ use App\Models\User;
 use App\Models\Guest;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class GuestController extends Controller
 {
@@ -68,11 +70,21 @@ class GuestController extends Controller
         
         $id = $inputs['user_id'];
 
-        if(request('guest_image')){
-            $inputs['guest_image'] = request('guest_image')->store('images');
-        }
 
+        $image = $request->get('guest_image');  // your base64 encoded
+        $image = str_replace('data:image/jpg;base64,', '', $image);
+        $image = str_replace(' ', '+', $image);
         
+        $imagePath= 'images/'. Str::random(20) . '.jpg';
+        Storage::disk('public')->put($imagePath, base64_decode($image));
+        $inputs['guest_image'] = $imagePath;
+        // dd($imagePath);
+
+        // if(request('guest_image')){
+        //     $inputs['guest_image'] = request('guest_image')->store('images');
+        // }
+      
+
         // dd($users);
 
         $guest = new Guest($inputs);

@@ -86,6 +86,11 @@ Route::get('/print_page', [InvoiceController::class, 'print_page'])->name('print
 
 
 Route::get('/admin_reports', [AdminController::class, 'admin_reports'])->name('admin.reports');
+
+Route::get('/today_emp_guest', [AdminController::class, 'today_emp_guest'])->name('admin.today_emp_guest');
+Route::get('/today_management_guest', [AdminController::class, 'today_management_guest'])->name('admin.today_management_guest');
+Route::get('/today_special_guest', [AdminController::class, 'today_special_guest'])->name('admin.today_special_guest');
+
 Route::post('/report_generates', [AdminController::class, 'report_generates'])->name('report.generates');
 
 

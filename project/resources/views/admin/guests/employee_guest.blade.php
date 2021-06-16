@@ -1,40 +1,8 @@
 <x-admin-master>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <div id="my_camera"></div>
-    <div id="results"></div>
-
-    <script type="text/javascript" src="/jss/webcam.min.js"></script>
-    <script type="text/javascript" src="/jss/webcam.js"></script>
-
-    <script language="JavaScript">
-        Webcam.set({
-            width: 220,
-            height: 140,
-            image_format: 'jpeg',
-            jpeg_quality: 90
-        });
-        Webcam.attach('#my_camera');
-
-
-        function take_snapshot() {
-
-            // take snapshot and get image data
-            Webcam.snap(function(data_uri) {
-                // display results in page
-                document.getElementById('results').innerHTML =
-                    '<img src="' + data_uri + '"/>';
-            });
-        }
-    </script>
-
-
 
     @section('content')
+
     <h1 style="color:blue">Employee Guest</h1>
 
     <div class="row">
@@ -83,14 +51,42 @@
             </div>
 
 
-            <div class="form-group" style="color:black;">
+            <!-- <div class="form-group" style="color:black;">
                 <label for="file"><b>Image</b></label>
                 <input type="file" style="width:50%" class="form-control" name="guest_image" id="guest_image">
-            </div>
+            </div> -->
 
             <div class="col">
-                <div id="my_camera"></div>
+          
+            <div id="my_camera"></div>
+
+
+
+
+            <script language="JavaScript">
+            Webcam.set({
+                width: 220,
+                height: 140,
+                image_format: 'jpeg',
+                jpeg_quality: 90
+            });
+            Webcam.attach('#my_camera');
+            
+            
+            function take_snapshot() {
+            
+                // take snapshot and get image data
+                Webcam.snap(function(data_uri){
+      $(".image-tag").val(data_uri);
+            document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+                });
+            }
+
+            </script>
+                <div id="results"></div>
                 <input type=button value="Take Snapshot" onClick="take_snapshot()" style="float:left; width:180px; height:40px;" />
+                <input type="hidden" name="guest_image" class="image-tag">
+
             </div>
 
 
@@ -107,9 +103,9 @@
 
     </div>
     </form>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            
+         
+
 
 
 
