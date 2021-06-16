@@ -27,12 +27,14 @@ class GuestController extends Controller
     public function managementindex()
     {
         //
-        return view('admin.guests.management');
+        $users = User::all();
+        return view('admin.guests.management', ['users' => $users]);
     }
     public function specialindex()
     {
         //
-        return view('admin.guests.special');
+        $users = User::all();
+        return view('admin.guests.special', ['users' => $users]);
     }
 
     /**
@@ -58,13 +60,27 @@ class GuestController extends Controller
         $inputs = request()->validate([
             'user_id' => 'required',
             'name'=>'required',
-            'phone_number' => 'required'
+            'phone_number' => 'required',
+            'user_name' => 'required',
+            'guest_status' => 'required'
         ]);
         $inputs['user_ref_id'] = $request['user_ref_id'];
+        
+        $id = $inputs['user_id'];
+
+        if(request('guest_image')){
+            $inputs['guest_image'] = request('guest_image')->store('images');
+        }
+
+        
+        // dd($users);
 
         $guest = new Guest($inputs);
         
         $guest->save();
+        $users = Guest::latest()->first();
+
+        return view('admin.guests.guest_token', ['users' => $users]);
     }
 
     /**

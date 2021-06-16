@@ -4,6 +4,15 @@
 
 <form  method="post" action="{{route('guest.store')}}" enctype="multipart/form-data">
 @csrf
+
+<div class="form-group">
+<label for="category">User ID</label>
+<select name="user_id" id="">
+        @foreach($users as $user)
+        <option value="{{$user->id}}">{{$user->name}}</option>
+        @endforeach
+</select>
+</div>
 <div class="form-group" style="color:black;">
 <label for="title"><b>Name</b></label>
 <input type="text" style="width:50%" class="form-control" name="name" id="title" aria-describedby="" placeholder="Enter name">
@@ -11,7 +20,12 @@
 
 <div class="form-group" style="color:black;">
 <label for="title"><b>Phone Number</b></label>
-<input type="text"  style="width:50%" class="form-control" name="special_phonenumber" id="title" aria-describedby="" placeholder="Enter special phone number">
+<input type="text"  style="width:50%" class="form-control" name="phone_number" id="title" aria-describedby="" placeholder="Enter special phone number">
+</div>
+
+<div class="form-group" style="color:black;">
+<label for="title"><b>Reference Name</b></label>
+<input type="text" style="width:50%" class="form-control" name="user_name" id="title" aria-describedby="" placeholder="Enter employee name">
 </div>
 
 <div class="form-group" style="color:black;">
@@ -24,17 +38,18 @@
 
 <div class="form-group" style="color:black;">
 
-<input type="hidden"  style="width:50%" class="form-control" name="emp_guest" value="emp_guest" id="title" aria-describedby="" placeholder="Enter Guest Status">
+<input type="hidden"  style="width:50%" class="form-control" name="guest_status" value="special_guest" id="title" aria-describedby="" placeholder="Enter Guest Status">
 </div>
-
-
-</form>
 
 
 <div class="wsite-form-radio-container">
 
 <label class="wsite-form-label" style="width: 100%; color:blue">Please submit</label><br>
 <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+
+</form>
+
+
 
 </div>
 
