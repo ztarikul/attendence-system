@@ -36,6 +36,10 @@
   margin-top: 0px;
 }
 
+
+.card1:hover {
+  background-color: DodgerBlue;
+}
 .btn {
   background-color: DodgerBlue;
   border: none;
@@ -77,13 +81,13 @@
 
 <div class="row">
   <div class="col-sm-4">
-  <a href="{{route('guest.employee')}}"><button style="width: 70%" class="btn">EMPLOYEE GUEST</button></a>
+  <a href="{{route('guest.employee')}}"><button style="width: 70%" class="btn"><b>EMPLOYEE GUEST</b></button></a>
   </div>
   <div class="col-sm-4">
-  <a href="{{route('guest.management')}}"><button style="width: 70%" class="btn"> MAMAGEMENT GUEST</button></a>
+  <a href="{{route('guest.management')}}"><button style="width: 70%" class="btn"><b>MANAGEMENT GUEST</b></button></a>
   </div>
   <div class="col-sm-4">
-  <a href="{{route('guest.special')}}"><button style="width: 70%" class="btn"> SPECIAL GUEST</button></a>
+  <a href="{{route('guest.special')}}"><button style="width: 70%" class="btn"><b>SPECIAL GUEST</b></button></a>
   </div>
 </div>
 
@@ -93,7 +97,7 @@
     <a href=""><button style="width: 70%" class="btn1">{{$employee_guests->count()}}</button></a>
   </div>
   <div class="col-sm-4">
-  <a href=""><button style="width: 70%" class="btn1"> {{$management_guests->count()}}</button></a>
+  <a href=""><button style="width: 70%" class="btn1">{{$management_guests->count()}}</button></a>
   </div>
   <div class="col-sm-4">
   <a href=""><button style="width: 70%" class="btn1"> {{$special_guests->count()}}</button></a>
