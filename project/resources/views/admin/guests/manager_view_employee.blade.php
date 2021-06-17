@@ -20,7 +20,7 @@
       <th scope="col">Employee ID</th>
       <th scope="col">Image</th>
       <th scope="col">Created Time</th>
-      <th scope="col">Update</th>
+     
      
       
     </tr>
@@ -40,7 +40,7 @@
       
       <td>{{ $user->created_at }}</td>
      
-      <td> <a href="{{route('employee.edit', $user->id) }}"  class='btn btn-primary btn-sm'>Edit</a></td>
+      
       
       
 

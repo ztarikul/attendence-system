@@ -15,22 +15,22 @@
 </div>
 <div class="form-group" style="color:black;">
 <label for="title"><b>Name</b></label>
-<input type="text" style="width:50%" class="form-control" name="name" id="title" aria-describedby="" placeholder="Enter name">
+<input type="text" style="width:50%" class="form-control" name="name" id="title" aria-describedby="" placeholder="enter name">
 </div>
 
 <div class="form-group" style="color:black;">
 <label for="title"><b>Management Referance Id</b></label>
-<input type="text"  style="width:50%" class="form-control" name="user_ref_id" id="title" aria-describedby="" placeholder="Enter management id">
+<input type="text"  style="width:50%" class="form-control" name="user_ref_id" id="title" aria-describedby="" placeholder="enter refer id">
 </div>
 
 <div class="form-group" style="color:black;">
 <label for="title"><b>Management Name</b></label>
-<input type="text" style="width:50%" class="form-control" name="user_name" id="title" aria-describedby="" placeholder="Enter employee name">
+<input type="text" style="width:50%" class="form-control" name="user_name" id="title" aria-describedby="" placeholder="enter employee name">
 </div>
 
 <div class="form-group" style="color:black;">
 <label for="title"><b>Phone Number</b></label>
-<input type="text"  style="width:50%" class="form-control" name="phone_number" id="title" aria-describedby="" placeholder="Enter management phone number">
+<input type="text"  style="width:50%" class="form-control" name="phone_number" id="title" aria-describedby="" placeholder="enter phone number">
 </div>
 
 <div class="form-group" style="color:black;">

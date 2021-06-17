@@ -5,7 +5,8 @@
 <li class="nav-item">
   <a  href="{{route('admin.index')}}" data-toggle="collapse" data-target="#collapseone" aria-expanded="true" aria-controls="collapseone">
    
-   <a href="{{route('admin.index')}}" style="color: white;"> <i class="fas fa-fw fa-wrench"></i><span>Management</span></a> 
+   <a class="nav-link collapsed" href="{{route('admin.index')}}" style="color: white;"> <i class="fas fa-fw fa-wrench"></i><span>Management</span></a> 
+   <a class="nav-link collapsed" href="{{route('employee.view_employee')}}" style="color: white;"> <i class="fas fa-fw fa-wrench"></i><span>Employee</span></a> 
     
     
     
@@ -30,6 +31,7 @@
   <a class="nav-link collapsed" href="{{route('admin.index')}}" data-toggle="collapse" data-target="#collapsedata" aria-expanded="true" aria-controls="collapseone">
     <i class="fas fa-fw fa-wrench"></i>
     <span>Admin</span>
+    
   </a>
   <div id="collapsedata" class="collapse" aria-labelledby="headingdata" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
@@ -40,6 +42,7 @@
       <!-- @endif -->
     </div>
   </div>
+  <a class="nav-link collapsed" href="{{route('employee.index')}}" style="color: white;"> <i class="fas fa-fw fa-wrench"></i><span>Employee</span></a> 
 </li>
 @endif
 <!-- Report -->

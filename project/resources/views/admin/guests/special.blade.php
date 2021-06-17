@@ -15,17 +15,17 @@
 </div>
 <div class="form-group" style="color:black;">
 <label for="title"><b>Name</b></label>
-<input type="text" style="width:50%" class="form-control" name="name" id="title" aria-describedby="" placeholder="Enter name">
+<input type="text" style="width:50%" class="form-control" name="name" id="title" aria-describedby="" placeholder="enter name">
 </div>
 
 <div class="form-group" style="color:black;">
 <label for="title"><b>Phone Number</b></label>
-<input type="text"  style="width:50%" class="form-control" name="phone_number" id="title" aria-describedby="" placeholder="Enter special phone number">
+<input type="text"  style="width:50%" class="form-control" name="phone_number" id="title" aria-describedby="" placeholder="enter phone number">
 </div>
 
 <div class="form-group" style="color:black;">
 <label for="title"><b>Reference Name</b></label>
-<input type="text" style="width:50%" class="form-control" name="user_name" id="title" aria-describedby="" placeholder="Enter employee name">
+<input type="text" style="width:50%" class="form-control" name="user_name" id="title" aria-describedby="" placeholder="enter employee name">
 </div>
 
 <div class="form-group" style="color:black;">

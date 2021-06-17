@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
-
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\InvoiceController;
@@ -95,7 +94,12 @@ Route::get('/guest_employee', 'GuestController@employeeindex')->name('guest.empl
 Route::get('/management', 'GuestController@managementindex')->name('guest.management');
 Route::get('/special', 'GuestController@specialindex')->name('guest.special');
 
+Route::get('/view_all_employee','GuestController@view_employee')->name('guest.view_all_employee');
+
 Route::resource('attendance', AttendanceController::class);
+
+Route::resource('employee', EmployeeController::class);
+Route::get('/manager_view_employee', 'EmployeeController@manager_view_employee')->name('employee.view_employee');
 
 
 });
