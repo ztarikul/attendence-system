@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attendance;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class AttendanceController extends Controller
 {
@@ -14,6 +17,10 @@ class AttendanceController extends Controller
     public function index()
     {
         //
+
+        $attendances = Attendance::all();
+        // dd($attendances);
+        return view('attendance.view_all_employee', ['attendances' => $attendances]);
     }
 
     /**
@@ -80,5 +87,15 @@ class AttendanceController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function attendance_get_token($id){
+        // dd($id);
+        $attendance = Attendance::where('user_id', $id)->first();
+        $attendance['token_status'] = "taken";
+        $attendance->save();
+        // dd($attendance);
+        $user = User::find($id);
+        return view('attendance.attendance_token', ['user'=> $user, 'attendance'=>$attendance]);
     }
 }

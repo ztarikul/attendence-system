@@ -7,6 +7,7 @@
    
    <a class="nav-link collapsed" href="{{route('admin.index')}}" style="color: white;"> <i class="fas fa-fw fa-wrench"></i><span>Management</span></a> 
    <a class="nav-link collapsed" href="{{route('employee.view_employee')}}" style="color: white;"> <i class="fas fa-fw fa-wrench"></i><span>Employee</span></a> 
+   <a class="nav-link collapsed" href="{{route('attendance.index')}}" style="color: white;"> <i class="fas fa-fw fa-wrench"></i><span>Today Attendance</span></a> 
     
     
     
@@ -38,7 +39,7 @@
       <h6 class="collapse-header">Admin:</h6>
       <!-- @if(auth()->user()->userHasRole('Admin')) -->
       <!-- <a class="collapse-item" href="{{route('admin.index')}}">Dashboard</a> -->
-      <a class="collapse-item" href="{{route('admin.reports')}}">Reports</a>
+      <a class="collapse-item" href="{{route('admin.reports')}}">Guest Reports</a>
       <!-- @endif -->
     </div>
   </div>

@@ -20,7 +20,8 @@
       <th scope="col">Employee ID</th>
       <th scope="col">Image</th>
       <th scope="col">Created Time</th>
-      <th scope="col">Update</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
      
       
     </tr>
@@ -36,12 +37,17 @@
       <td>{{ $user->email}}</td>
       <td>{{ $user->phone_number}}</td>
       <td>{{ $user->user_ref_id}}</td>
-      <td><img src="/storage/{{$user->emp_image}}" alt=""></td>
+      <td><img width="50" height="50" src="/storage/{{$user->emp_image}}" alt=""></td>
       
       <td>{{ $user->created_at }}</td>
+      <form method="post" action="{{route('employee.destroy', $user->id)}}">
+        @csrf
+        @method('DELETE')
+        <td><a href="{{route('employee.edit', $user->id)}}" class="btn btn-success btn-sm">Edit</a></td>
+        <td><input type="submit" class="btn btn-danger btn-sm" value="Delete"></td>
+        
+      </form>
      
-      <td> <a href="{{route('employee.edit', $user->id) }}"  class='btn btn-primary btn-sm'>Edit</a></td>
-      
       
 
     </tr>

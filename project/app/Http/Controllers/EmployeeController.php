@@ -25,7 +25,7 @@ class EmployeeController extends Controller
     {
         //
         $users = User::all();
-        return view('admin.guests.manager_view_employee',['users'=> $users]);
+        return view('admin.guests.view_all_employee',['users'=> $users]);
     }
     /**
      * Show the form for creating a new resource.
@@ -95,7 +95,7 @@ class EmployeeController extends Controller
         ]);
          
         if(request('emp_image')){
-            $user['emp_image'] = request('emp_image')->update('images');
+            $user['emp_image'] = request('emp_image')->store('images');
         }
 
 
@@ -113,5 +113,9 @@ class EmployeeController extends Controller
     public function destroy($id)
     {
         //
+
+        $employee = User::find($id);
+        $employee->delete();
+        return redirect()->route('employee.index');
     }
 }

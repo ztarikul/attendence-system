@@ -110,10 +110,16 @@
 
 @if(auth()->user()->userHasRole('Admin'))
 
-<div class="column1">
+  <div class="column1">
     <div class="card1">
-      <h1><b>Total Guest</b></h1>
+      <h2><b>Today Total Guest</b></h2>
       <h1 style="margin-left: 300px;">{{$today_total_guests->count()}}</h1>
+    </div>
+  </div>
+  <div class="column1">
+    <div class="card1">
+      <h3><b>Today Total Employee</b></h3>
+      <h1 style="margin-left: 300px;">{{$today_total_emp->count()}}</h1>
     </div>
   </div>
 

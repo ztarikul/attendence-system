@@ -45,9 +45,8 @@
 
         <div class="col-sm-6">
 
-            <div class="form-group" style="color:black;">
-
-                <input type="hidden" style="width:50%" class="form-control" name="guest_status" value="emp_guest" id="title" aria-describedby="" placeholder="enter Guest Status">
+            <div class="form-group" >
+                <input type="hidden"  name="guest_status" value="emp_guest">
             </div>
 
 
@@ -58,15 +57,11 @@
 
             <div class="col">
           
-            <div id="my_camera"></div>
-
-
-
-
+            <div id="my_camera"></div> 
             <script language="JavaScript">
             Webcam.set({
-                width: 220,
-                height: 140,
+                width: 320,
+                height: 220,
                 image_format: 'jpeg',
                 jpeg_quality: 90
             });
@@ -84,8 +79,11 @@
 
             </script>
                 <div id="results"></div>
-                <input type=button value="Take Snapshot" onClick="take_snapshot()" style="float:left; width:180px; height:40px;" />
+                <div class="form-group">
+                <br>
+                <input class="btn btn-success" type=button value="Take Snapshot" onClick="take_snapshot()" style="margin:middle;" />
                 <input type="hidden" name="guest_image" class="image-tag">
+                </div>
 
             </div>
 

@@ -22,7 +22,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/post/{post}', [PostController::class, 'show'])->name('post');
 
-Route::post('/search', [PostController::class, 'search_post'])->name('search_post');
+Route::post('/search', [HomeController::class, 'search_employee'])->name('search.employee');
 
 Route::middleware('auth')->group(function(){
 
@@ -102,8 +102,10 @@ Route::get('/special', 'GuestController@specialindex')->name('guest.special');
 Route::get('/view_all_employee','GuestController@view_employee')->name('guest.view_all_employee');
 
 Route::resource('attendance', AttendanceController::class);
+Route::get('/emp_getToken/{id}', 'AttendanceController@attendance_get_token')->name('attendance.get_token');
 
 Route::resource('employee', EmployeeController::class);
+
 Route::get('/manager_view_employee', 'EmployeeController@manager_view_employee')->name('employee.view_employee');
 
 

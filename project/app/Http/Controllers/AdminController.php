@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attendance;
 use App\Models\Guest;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -19,8 +20,9 @@ class AdminController extends Controller
 
 
         $today_total_guests = Guest::whereDate('created_at', Carbon::today())->get();
+        $today_total_emp = Attendance::whereDate('date', Carbon::today())->get();
 
-        return view('admin.index', ['employee_guests' => $employee_guests, 'management_guests'=>$management_guests, 'special_guests'=>$special_guests, 'today_total_guests'=> $today_total_guests ]);
+        return view('admin.index', ['employee_guests' => $employee_guests, 'management_guests'=>$management_guests, 'special_guests'=>$special_guests, 'today_total_guests'=> $today_total_guests, 'today_total_emp' => $today_total_emp ]);
     }
 
 

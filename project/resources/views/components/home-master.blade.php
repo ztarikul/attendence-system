@@ -82,7 +82,7 @@
         Search Widget -->
         <!-- <div class="card my-4">
           <h5 class="card-header">Search</h5>
-          <form method="post" action="{{route('search_post')}}">
+          <form method="post" action="">
           <div class="card-body"> -->
           <!-- @csrf -->
             <!-- <div class="input-group">

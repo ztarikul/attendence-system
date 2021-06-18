@@ -72,10 +72,10 @@ class GuestController extends Controller
 
 
         $image = $request->get('guest_image');  // your base64 encoded
-        $image = str_replace('data:image/jpg;base64,', '', $image);
+        $image = str_replace('data:image/jpeg;base64,', '', $image);
         $image = str_replace(' ', '+', $image);
         
-        $imagePath= 'images/'. Str::random(20) . '.jpg';
+        $imagePath= 'images/'. Str::random(20) . '.jpeg';
         Storage::disk('public')->put($imagePath, base64_decode($image));
         $inputs['guest_image'] = $imagePath;
         // dd($imagePath);
@@ -90,7 +90,7 @@ class GuestController extends Controller
         $guest = new Guest($inputs);
         
         $guest->save();
-        $users = Guest::latest()->first();
+        $users = Guest::latest('id')->first();
 
         return view('admin.guests.guest_token', ['users' => $users]);
     }
