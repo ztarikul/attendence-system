@@ -25,7 +25,7 @@
 <h6>Employee Refer ID: {{$users->user_ref_id}}</h6>
 <h6>Phone Number: {{$users->phone_number}}</h6>
 <h6>Date&Time: {{$users->created_at}}</h6>
-<button onclick="window.print();" class="btn btn-primary" id="print-btn">Welcom To Our Company</button>
+<button onclick="window.print();" class="btn btn-primary" id="print-btn">GLOBE GROUP LTD.</button>
         <script src="{{ asset('js/app.js') }}" type="text/js"></script>
 
 </body>
