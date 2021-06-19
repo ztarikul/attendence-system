@@ -5,9 +5,9 @@
 <li class="nav-item">
   <a  href="{{route('admin.index')}}" data-toggle="collapse" data-target="#collapseone" aria-expanded="true" aria-controls="collapseone">
    
-   <a class="nav-link collapsed" href="{{route('admin.index')}}" style="color: white;"> <i class="fas fa-fw fa-wrench"></i><span>Management</span></a> 
-   <a class="nav-link collapsed" href="{{route('employee.view_employee')}}" style="color: white;"> <i class="fas fa-fw fa-wrench"></i><span>Employee</span></a> 
-   <a class="nav-link collapsed" href="{{route('attendance.index')}}" style="color: white;"> <i class="fas fa-fw fa-wrench"></i><span>Today Attendance</span></a> 
+   <a class="nav-link collapsed" href="{{route('admin.index')}}" style="color: white;"> <i class="fas fa-tasks"></i><span>Management</span></a> 
+   <a class="nav-link collapsed" href="{{route('employee.view_employee')}}" style="color: white;"> <i class="fas fa-user-friends"></i><span>Employee</span></a> 
+   <a class="nav-link collapsed" href="{{route('attendance.index')}}" style="color: white;"> <i class="fas fa-user-check"></i><span>Today Attendance</span></a> 
     
     
     
@@ -28,11 +28,12 @@
 
 <!--Admin -->
 @if(auth()->user()->userHasRole('Admin'))
+
 <li class="nav-item">
+<a class="nav-link collapsed" href="{{route('admin.index')}}" style="color: white;"><i class="fas fa-chart-line"></i><span>Dashboard</span></a> 
   <a class="nav-link collapsed" href="{{route('admin.index')}}" data-toggle="collapse" data-target="#collapsedata" aria-expanded="true" aria-controls="collapseone">
-    <i class="fas fa-fw fa-wrench"></i>
+  <i class="fas fa-user-cog"></i>
     <span>Admin</span>
-    
   </a>
   <div id="collapsedata" class="collapse" aria-labelledby="headingdata" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
@@ -43,7 +44,7 @@
       <!-- @endif -->
     </div>
   </div>
-  <a class="nav-link collapsed" href="{{route('employee.index')}}" style="color: white;"> <i class="fas fa-fw fa-wrench"></i><span>Employee</span></a> 
+  <a class="nav-link collapsed" href="{{route('employee.index')}}" style="color: white;"> <i class="fas fa-user-friends"></i><span>Employee</span></a> 
 </li>
 @endif
 <!-- Report -->

@@ -14,11 +14,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
   .column1 {
-    width: 50%;
+    width: 100%;
+    height: 200px;
     display: block;
     margin-bottom: 10px;
     height: auto;
     margin-top: 0px;
+    margin-left:0px:
     background-color: red; /* For browsers that do not support gradients */
   background-image: linear-gradient(to right, red , yellow);
   margin-left: 277px;
@@ -81,26 +83,26 @@
 
 <div class="row">
   <div class="col-sm-4">
-  <a href="{{route('guest.employee')}}"><button style="width: 70%" class="btn"><b>EMPLOYEE GUEST</b></button></a>
+  <a href="{{route('guest.employee')}}"><button style="width: 70%; font-size:100%;" class="btn"><i class="fas fa-user-plus fa-2x"></i><br><br>EMPLOYEE GUEST</button></a>
   </div>
   <div class="col-sm-4">
-  <a href="{{route('guest.management')}}"><button style="width: 70%" class="btn"><b>MANAGEMENT GUEST</b></button></a>
+  <a href="{{route('guest.management')}}"><button style="width: 70%; font-size:100%;" class="btn"><i class="fas fa-user-cog fa-2x"></i><br><br>MANAGEMENT GUEST</button></a>
   </div>
   <div class="col-sm-4">
-  <a href="{{route('guest.special')}}"><button style="width: 70%" class="btn"><b>SPECIAL GUEST</b></button></a>
+  <a href="{{route('guest.special')}}"><button width=50 height=20 style="width: 70%; font-size:100%;" class="btn"><i class="fas fa-user-lock fa-2x" ></i><br><br>SPECIAL GUEST</button></a>
   </div>
 </div>
 
 
 <div class="row">
   <div class="col-sm-4">
-    <a href=""><button style="width: 70%" class="btn1">{{$employee_guests->count()}}</button></a>
+    <a href=""><button style="width:70% ; font-size: 300%;" class="btn1" ><b>{{$employee_guests->count()}}</b></button></a>
   </div>
   <div class="col-sm-4">
-  <a href=""><button style="width: 70%" class="btn1">{{$management_guests->count()}}</button></a>
+  <a href=""><button style="width: 70%; font-size: 300%;" class="btn1"><b>{{$management_guests->count()}}</b></button></a>
   </div>
   <div class="col-sm-4">
-  <a href=""><button style="width: 70%" class="btn1"> {{$special_guests->count()}}</button></a>
+  <a href=""><button style="width: 70%; font-size: 300%;" class="btn1"><b> {{$special_guests->count()}}</b></button></a>
   </div>
 </div>
 
@@ -109,29 +111,39 @@
 
 
 @if(auth()->user()->userHasRole('Admin'))
-
-  <div class="column1">
-    <div class="card1">
+<div class="row">
+<div style="width:100%;margin-left:-150px;margin-right:100px;" class="col-sm-4" >
+  <div  class="column1">
+    <div class="card1" >
       <h2><b>Today Total Guest</b></h2>
-      <h1 style="margin-left: 300px;">{{$today_total_guests->count()}}</h1>
+      <h1 style="margin-left:0px; width:300px;height: 120px;">{{$today_total_guests->count()}}</h1>
     </div>
   </div>
+</div>
+<div class="col-sm-4">
   <div class="column1">
     <div class="card1">
       <h3><b>Today Total Employee</b></h3>
-      <h1 style="margin-left: 300px;">{{$today_total_emp->count()}}</h1>
+      <h1 style="margin-left: 10px; width:300px;height: 120px;">{{$today_total_emp->count()}}</h1>
     </div>
   </div>
+</div>
+
+
+
+
+</div>
+
 
 
 <div class="row">
-  <div class="col-sm-4">
+  <div class="col-sm-5"style="margin-left:-60px;margin-right:0px;">
     <a href="{{route('admin.today_emp_guest')}}"><button style="width: 70%" class="btn1">Today Employee Guest : {{$employee_guests->count()}}</button></a>
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-5"style="margin-left:-100px;margin-right:0px;">
   <a href="{{route('admin.today_management_guest')}}"><button style="width: 70%" class="btn1">Today Management Guest : {{$management_guests->count()}}</button></a>
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-5" style="margin-left:-100px;margin-right:0px;">
   <a href="{{route('admin.today_special_guest')}}"><button style="width: 70%" class="btn1">Today Special Guest : {{$special_guests->count()}}</button></a>
   </div>
 </div>
