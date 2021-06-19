@@ -26,32 +26,32 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="">ATTENDANCE  SYSTEM</a>
+      <a class="navbar-brand" href=""><b>VISITOR MANAGEMENT</b></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <!-- <li class="nav-item active">
             <a class="nav-link" href="#">Home
               <span class="sr-only">(current)</span>
             </a>
-          </li>
+          </li> -->
 
           @if(Auth::check())
           <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.index')}}">Dashboard</a>
+            <a class="navbar-brand" href="{{route('admin.index')}}"><b>DASHBOARD</b></a>
           </li>
 
           @else
           <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/login"><b>LOGIN</b></a>
           </li>
 
 
           @endif
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item">
@@ -59,12 +59,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
   </nav>
-
+ <div style="background-attachment: fixed;"> <img src="{{asset('img/background.jpg')}}" alt="" width="100%" height="40%"></div>
   <!-- Page Content -->
   <!-- <div class="container"> -->
 <!-- 
