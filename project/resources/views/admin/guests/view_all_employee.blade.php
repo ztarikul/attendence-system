@@ -37,7 +37,7 @@
       <td>{{ $user->email}}</td>
       <td>{{ $user->phone_number}}</td>
       <td>{{ $user->user_ref_id}}</td>
-      <td><img width="50" height="50" src="/storage/{{$user->emp_image}}" alt=""></td>
+      <td><img class="zoom" width="50" height="50" src="/storage/{{$user->emp_image}}" alt=""></td>
       
       <td>{{ $user->created_at }}</td>
       <form method="post" action="{{route('employee.destroy', $user->id)}}">

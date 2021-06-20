@@ -7,7 +7,7 @@
    
    <a class="nav-link collapsed" href="{{route('admin.index')}}" style="color: white;"> <i class="fas fa-tasks"></i><span>Management</span></a> 
    <a class="nav-link collapsed" href="{{route('employee.view_employee')}}" style="color: white;"> <i class="fas fa-user-friends"></i><span>Employee</span></a> 
-   <a class="nav-link collapsed" href="{{route('attendance.index')}}" style="color: white;"> <i class="fas fa-user-check"></i><span>Today Attendance</span></a> 
+   <a class="nav-link collapsed" href="{{route('attendance.index')}}" style="color: white;"> <i class="fas fa-user-check"></i><span>Today Meal</span></a> 
     
     
     
@@ -45,6 +45,7 @@
     </div>
   </div>
   <a class="nav-link collapsed" href="{{route('employee.index')}}" style="color: white;"> <i class="fas fa-user-friends"></i><span>Employee</span></a> 
+  <a class="nav-link collapsed" href="{{route('user_role_manage')}}" style="color: white;"> <i class="fas fa-user-friends"></i><span>Role Management</span></a> 
 </li>
 @endif
 <!-- Report -->

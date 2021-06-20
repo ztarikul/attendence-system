@@ -12,9 +12,11 @@ class AdminController extends Controller
     //
 
     public function index(){
-
+                                // TODAY EMP GUEST FIND QUERY 
         $employee_guests = Guest::where('guest_status', 'emp_guest')->whereDate('created_at', Carbon::today())->get();
+
         $management_guests = Guest::where('guest_status', 'management_guest')->whereDate('created_at', Carbon::today())->get();
+
         $special_guests = Guest::where('guest_status', 'special_guest')->whereDate('created_at', Carbon::today())->get();
         // dd($employee_guests);
 

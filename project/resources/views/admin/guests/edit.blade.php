@@ -37,12 +37,13 @@
     </div>
 
     <div class=form-group>
-    <img src="/images/{{$user->emp_image}}" alt="">
+    <img width="100" height="100" src="/images/{{$user->emp_image}}" alt="">
     </div>
     <div class="form-group">
         <label for="file"><b>Image</b></label>
-        <input  name="emp_image" type="file" style="width:70%" class="form-control" id="emp_image">
-    </div>
+        </div>
+        <input   name="emp_image" type="file" style="width:70%" class="btn btn-success" id="emp_image">
+    
     </div>
     </div>
     <div class="form-group">

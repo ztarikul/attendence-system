@@ -54,7 +54,14 @@ class GuestController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     * 
+     * 
+     * 
+     * 
      */
+
+
+
     public function store(Request $request)
     {
         //
@@ -66,7 +73,7 @@ class GuestController extends Controller
             'user_name' => 'required',
             'guest_status' => 'required'
         ]);
-        $inputs['user_ref_id'] = $request['user_ref_id'];
+        $inputs['user_ref_id'] = $request['user_id'];
         
         $id = $inputs['user_id'];
 
@@ -90,7 +97,11 @@ class GuestController extends Controller
         $guest = new Guest($inputs);
         
         $guest->save();
-        $users = Guest::latest('id')->first();
+
+
+        // New Guest 
+
+        $users = Guest::latest('id')->first(); /// 
 
         return view('admin.guests.guest_token', ['users' => $users]);
     }

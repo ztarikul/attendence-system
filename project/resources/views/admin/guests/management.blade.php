@@ -20,10 +20,10 @@
         <input type="text" style="width:50%" class="form-control" name="name" id="title" aria-describedby="" placeholder="enter name">
         </div>
 
-        <div class="form-group" style="color:black;">
+        <!-- <div class="form-group" style="color:black;">
         <label for="title"><b>Management Referance Id</b></label>
         <input type="text"  style="width:50%" class="form-control" name="user_ref_id" id="title" aria-describedby="" placeholder="enter refer id">
-        </div>
+        </div> -->
 
         <div class="form-group" style="color:black;">
         <label for="title"><b>Management Name</b></label>

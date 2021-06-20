@@ -1,6 +1,6 @@
 <x-admin-master>
 @section('content')
-<h1 style="color:blue">Random Report</h1>
+<h1 style="color:blue">GUEST REPORT</h1>
 
 <form  method="post" action="{{route('report.generates')}}" enctype="multipart/form-data">
 @csrf
