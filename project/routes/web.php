@@ -17,17 +17,6 @@ use Illuminate\Support\Facades\Auth;
 // });
 
 Auth::routes();
-<<<<<<< HEAD
-//----GO TO HOME----//
-Route::get('/', [HomeController::class, 'index'])->name('home');
-
-Route::get('/post/{post}', [PostController::class, 'show'])->name('post');
-//----GO TO SEARCH BAR----//
-Route::post('/search', [HomeController::class, 'search_employee'])->name('search.employee');
-//----GO TO LOGIN & REGISTRATION VERIFICATION----//
-Route::middleware('auth')->group(function(){
-//----GO TO ADMIN DASHBOARD----//
-=======
 
 
 
@@ -44,7 +33,6 @@ Route::post('/search', [HomeController::class, 'search_employee'])->name('search
 Route::middleware('auth')->group(function(){
 
 
->>>>>>> bd185141cc5354e8b583a0f014ce459e59f7c94f
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
 Route::get('/admin/posts/create', [PostController::class, 'create'])->name('post.create');
