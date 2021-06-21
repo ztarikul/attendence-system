@@ -59,7 +59,7 @@ class GuestController extends Controller
      * 
      * 
      */
-    public function store(Request $request)//guest token query//
+   //guest token query//
 
 
 
