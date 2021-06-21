@@ -117,11 +117,8 @@ class EmployeeController extends Controller
 
 
 
-<<<<<<< HEAD
         $user->update($request->all());//--UPDATE EMPLOYEE'S INFORMATION QUERY--//
-=======
         // $user->update($request->all());
->>>>>>> bd185141cc5354e8b583a0f014ce459e59f7c94f
         // dd($user);
         return redirect()->route('employee.index');
     }

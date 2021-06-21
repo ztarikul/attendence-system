@@ -59,14 +59,11 @@ class GuestController extends Controller
      * 
      * 
      */
-<<<<<<< HEAD
     public function store(Request $request)//guest token query//
-=======
 
 
 
     public function store(Request $request)
->>>>>>> bd185141cc5354e8b583a0f014ce459e59f7c94f
     {
         //
         // dd($request);
@@ -101,15 +98,12 @@ class GuestController extends Controller
         $guest = new Guest($inputs);
         
         $guest->save();
-<<<<<<< HEAD
         $users = Guest::latest('id')->first();//new guest entry//
-=======
 
 
         // New Guest 
 
         $users = Guest::latest('id')->first(); /// 
->>>>>>> bd185141cc5354e8b583a0f014ce459e59f7c94f
 
         return view('admin.guests.guest_token', ['users' => $users]);
     }
