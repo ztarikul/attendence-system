@@ -28,9 +28,8 @@
       <td>{{$guest->user_name}}</td>
       <td>{{$guest->phone_number}}</td>
         <!-- Button trigger modal -->
-      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      <img width="50" height="50" src="/images/{{$guest->guest_image}}">
-      </button></td>
+     
+
  
       <td><img  class="zoom" width="50" height="50" src="/storage/{{$guest->guest_image}}"></td>
 
