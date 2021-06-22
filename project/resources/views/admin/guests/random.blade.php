@@ -2,6 +2,8 @@
 @section('content')
 <h1 style="color:blue">GUEST REPORT</h1>
 
+@if(auth()->user()->userHasRole('Admin'))
+
 <form  method="post" action="{{route('report.generates')}}" enctype="multipart/form-data">
 @csrf
 <div class="form-group" style="color:black;">
@@ -39,7 +41,7 @@
 
 </form>
 
-
+@endif
 
 
 @endsection 

@@ -66,7 +66,7 @@ class GuestController extends Controller
     public function store(Request $request)
     {
         //
-        // dd($request);
+        dd($request);
         $inputs = request()->validate([
             'user_id' => 'required',
             'name'=>'required',
@@ -103,7 +103,6 @@ class GuestController extends Controller
 
         // New Guest 
 
-        $users = Guest::latest('id')->first(); /// 
 
         return view('admin.guests.guest_token', ['users' => $users]);
     }

@@ -12,10 +12,22 @@
 
 
                 <div class="form-group">
-                    <label for="category">User ID</label>
+                    <label for="category">Employee</label>
                     <select name="user_id" id="">
+                    <option disabled selected value> -- select an option -- </option>
                         @foreach($users as $user)
-                        <option value="{{$user->id}}">{{$user->name}}</option>
+                        
+                        <option value="{{$user->id}}">{{$user->name}} (ID: {{$user->user_ref_id}} DEPT: {{$user->department}})</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="category">Employee</label>
+                    
+                    <select name="user_id" id="">
+                    <option disabled selected value> -- select an option -- </option>
+                        @foreach($users as $user)
+                        <option value="{{$user->id}}">{{$user->user_ref_id}} (Name: {{$user->name}} DEPT: {{$user->department}})</option>
                         @endforeach
                     </select>
                 </div>

@@ -26,6 +26,8 @@ Route::get('/post/{post}', [PostController::class, 'show'])->name('post');
 
 
 //--------- Search Bar ----------
+
+
 Route::post('/search', [HomeController::class, 'search_employee'])->name('search.employee'); 
 
 

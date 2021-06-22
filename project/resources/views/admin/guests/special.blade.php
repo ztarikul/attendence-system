@@ -10,11 +10,25 @@
         <div class="form-group">
         <label for="category">User ID</label>
         <select name="user_id" id="">
+        <option disabled selected value> -- select an option -- </option>
                 @foreach($users as $user)
-                <option value="{{$user->id}}">{{$user->name}}</option>
+                <option value="{{$user->id}}">{{$user->name}} (ID: {{$user->user_ref_id}} DEPT: {{$user->department}})</option>
                 @endforeach
         </select>
         </div>
+
+        <div class="form-group">
+        <label for="category">User Name</label>
+        
+        <select name="user_id" id="">
+        <option disabled selected value> -- select an option -- </option>
+                @foreach($users as $user)
+                <option value="{{$user->id}}">{{$user->user_ref_id}} (Name: {{$user->name}} DEPT: {{$user->department}})</option>
+                @endforeach
+        </select>
+        </div>
+
+
         <div class="form-group" style="color:black;">
         <label for="title"><b>Name</b></label>
         <input type="text" style="width:50%" class="form-control" name="name" id="title" aria-describedby="" placeholder="enter name">

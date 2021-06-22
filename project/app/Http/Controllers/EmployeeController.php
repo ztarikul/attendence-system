@@ -46,6 +46,8 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
         //
+
+
     }
 
     /**
@@ -102,6 +104,8 @@ class EmployeeController extends Controller
             'phone_number'=> 'required', 
         ]);
 
+
+
         if(request('emp_image')){
            $input['emp_image'] = request('emp_image')->store('images');
            $user->emp_image = $input['emp_image'];
@@ -117,7 +121,7 @@ class EmployeeController extends Controller
 
 
 
-        $user->update($request->all());//--UPDATE EMPLOYEE'S INFORMATION QUERY--//
+        //--UPDATE EMPLOYEE'S INFORMATION QUERY--//
         // $user->update($request->all());
         // dd($user);
         return redirect()->route('employee.index');

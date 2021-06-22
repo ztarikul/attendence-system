@@ -6,7 +6,7 @@
 
 <!-- Blog Post -->
 
-
+@if(auth()->user()->userHasRole('Admin'))
 <table class="table table-blue table-striped">
 <thead>
 <tr>
@@ -43,5 +43,6 @@
 
 </tbody>
 </table>
+@endif
 @endsection
 </x-admin-master>

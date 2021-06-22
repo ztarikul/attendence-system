@@ -156,7 +156,7 @@
 
 
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-        <form class="form-inline" method="post" action="{{route('search.employee')}}">
+        <form class="form-inline" target="_blank" method="post" action="{{route('search.employee')}}">
           @csrf
           <input name="search_bar" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button style="height=10px;weight=20px; cursor: pointer;background-color:DodgerBlue; color:white; " type="submit">Search</button>

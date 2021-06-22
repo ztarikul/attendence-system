@@ -1,5 +1,6 @@
 <x-admin-master>
     @section('content')
+    @if(auth()->user()->userHasRole('Admin'))
     <div class="card mb-4">
     <div class="card-body">
 
@@ -16,5 +17,6 @@
         </form>
     </div>
     </div>
+    @endif
     @endsection
 </x-admin-master>
