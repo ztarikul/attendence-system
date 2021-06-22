@@ -96,16 +96,17 @@
 
 <div class="row">
   <div class="col-sm-4">
-    <a href=""><button style="width:70% ; font-size: 300%;" class="btn1" ><b>{{$employee_guests->count()}}</b></button></a>
+    <a href="{{route('admin.today_emp_guest')}}"><button style="width:70% ; font-size: 300%;" class="btn1" ><b>{{$employee_guests->count()}}</b></button></a>
   </div>
   <div class="col-sm-4">
-  <a href=""><button style="width: 70%; font-size: 300%;" class="btn1"><b>{{$management_guests->count()}}</b></button></a>
+  <a href="{{route('admin.today_management_guest')}}"><button style="width: 70%; font-size: 300%;" class="btn1"><b>{{$management_guests->count()}}</b></button></a>
   </div>
   <div class="col-sm-4">
-  <a href=""><button style="width: 70%; font-size: 300%;" class="btn1"><b> {{$special_guests->count()}}</b></button></a>
+  <a href="{{route('admin.today_special_guest')}}"><button style="width: 70%; font-size: 300%;" class="btn1"><b> {{$special_guests->count()}}</b></button></a>
   </div>
 </div>
-
+<br>
+<br>
 
 @endif
 
@@ -116,7 +117,7 @@
   <div  class="column1">
     <div class="card1" >
       <h2><b>Today Total Guest</b></h2>
-      <h1 style="margin-left:0px; width:300px;height: 120px;">{{$today_total_guests->count()}}</h1>
+      <h1 style="margin-left:0px; width:300px; height: 120px;">{{$today_total_guests->count()}}</h1>
     </div>
   </div>
 </div>
@@ -128,29 +129,26 @@
     </div>
   </div>
 </div>
-
-
-
-
 </div>
 
 
 
 <div class="row">
-  <div class="col-sm-5"style="margin-left:-60px;margin-right:0px;">
-    <a href="{{route('admin.today_emp_guest')}}"><button style="width: 70%" class="btn1">Today Employee Guest : {{$employee_guests->count()}}</button></a>
+  <div class="col-sm-4">
+    <a href="{{route('admin.today_emp_guest')}}"><button  style="width: 70%; font-size:20px;" class="btn1">Today Employee Guest : {{$employee_guests->count()}}</button></a>
   </div>
-  <div class="col-sm-5"style="margin-left:-100px;margin-right:0px;">
-  <a href="{{route('admin.today_management_guest')}}"><button style="width: 70%" class="btn1">Today Management Guest : {{$management_guests->count()}}</button></a>
+  <div class="col-sm-4">
+  <a href="{{route('admin.today_management_guest')}}"><button style="width: 70%; font-size:20px;" class="btn1">Today Management Guest : {{$management_guests->count()}}</button></a>
   </div>
-  <div class="col-sm-5" style="margin-left:-100px;margin-right:0px;">
-  <a href="{{route('admin.today_special_guest')}}"><button style="width: 70%" class="btn1">Today Special Guest : {{$special_guests->count()}}</button></a>
+  <div class="col-sm-4">
+  <a href="{{route('admin.today_special_guest')}}"><button style="width: 70%; font-size:20px;" class="btn1">Today Special Guest : {{$special_guests->count()}}</button></a>
   </div>
 </div>
 
 
 @endif
-
+<br>
+<br>
 </body>
 </html>
 

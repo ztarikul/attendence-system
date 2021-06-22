@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Auth;
 // });
 
 Auth::routes();
+<<<<<<< HEAD
 //----GO TO HOME----//
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -26,6 +27,24 @@ Route::post('/search', [HomeController::class, 'search_employee'])->name('search
 //----GO TO LOGIN & REGISTRATION VERIFICATION----//
 Route::middleware('auth')->group(function(){
 //----GO TO ADMIN DASHBOARD----//
+=======
+
+
+
+Route::get('/', [HomeController::class, 'index'])->name('home'); //Homepage Route
+
+Route::get('/post/{post}', [PostController::class, 'show'])->name('post');
+
+
+//--------- Search Bar ----------
+Route::post('/search', [HomeController::class, 'search_employee'])->name('search.employee'); 
+
+
+
+Route::middleware('auth')->group(function(){
+
+
+>>>>>>> bd185141cc5354e8b583a0f014ce459e59f7c94f
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
 Route::get('/admin/posts/create', [PostController::class, 'create'])->name('post.create');
@@ -65,6 +84,8 @@ Route::get('/admin/role/edit/{role}', [RoleController::class, 'edit'])->name('ro
 
 Route::post('/admin/role/update/{role}', [RoleController::class, 'update'])->name('role_update');
 
+/////////////// ROLE MANAGEMENT ////
+
 Route::get('/user_role_manage', [RoleController::class, 'user_role_manage'])->name('user_role_manage');
 
 Route::get('/add_user_role/{user}', [RoleController::class, 'add_user_role'])->name('add_user_role');
@@ -75,6 +96,9 @@ Route::get('/delete_user_role/{user}', [RoleController::class, 'delete_user_role
 Route::post('/user_role_deleted/{user}', [RoleController::class, 'user_role_deleted'])->name('user_role_deleted');
 
 
+
+
+///////////  KAJ NAI 
 Route::resource('category', CategoryController::class);
 
 // Route::resource('employee', EmployeeController::class);
@@ -84,7 +108,15 @@ Route::get('/emp_print/{id}', [InvoiceController::class, 'emp_data_print'])->nam
 Route::get('/print_page', [InvoiceController::class, 'print_page'])->name('print.page');
 
 
+<<<<<<< HEAD
 //----GO TO ADMIN DASHBOARD AND SHOW REPORT FORM----//
+=======
+//////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+>>>>>>> bd185141cc5354e8b583a0f014ce459e59f7c94f
 Route::get('/admin_reports', [AdminController::class, 'admin_reports'])->name('admin.reports');
 //---- GO TO ADMIN DASHBOARD AND SHOW TODAY'S EMPLOYEE GUEST----//
 Route::get('/today_emp_guest', [AdminController::class, 'today_emp_guest'])->name('admin.today_emp_guest');
@@ -95,7 +127,13 @@ Route::get('/today_special_guest', [AdminController::class, 'today_special_guest
 //----GO TO ADMIN DASHBOARD AND SHOW REPORTS----//
 Route::post('/report_generates', [AdminController::class, 'report_generates'])->name('report.generates');
 
+<<<<<<< HEAD
 //----GO TO MANAGEMENT DASHBOARD----//
+=======
+
+
+
+>>>>>>> bd185141cc5354e8b583a0f014ce459e59f7c94f
 Route::resource('guest', GuestController::class);
 //----GO TO MANAGEMENT DASHBOARD AND SHOW EMPLOYEE GUEST FORM ----//
 Route::get('/guest_employee', 'GuestController@employeeindex')->name('guest.employee');

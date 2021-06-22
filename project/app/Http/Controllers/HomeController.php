@@ -56,12 +56,26 @@ class HomeController extends Controller
         return redirect()->route('user.show');
             
     }
+<<<<<<< HEAD
     //----SEARCH ALL EMPLOYEE ----//
     public function search_employee(Request $request){
         // dd($request);
         $search_emp = $request['search_bar'];
         $users = User::where('user_ref_id', $search_emp)//--SEARCH EMPLOYEE ID--//
         ->orWhere('name', 'like', '%' . $search_emp . '%')->get();//--SEARCH EMPLOYEE NAME--//
+=======
+ /// SEARCH FUNCION 
+    public function search_employee(Request $request){
+        // dd($request);
+        $search_emp = $request['search_bar'];
+
+        
+        $users = User::where('user_ref_id', $search_emp)
+        ->orWhere('name', 'like', '%' . $search_emp . '%')->get();
+
+
+
+>>>>>>> bd185141cc5354e8b583a0f014ce459e59f7c94f
         return view('admin.guests.view_all_employee', ['users'=>$users]);
         // dd($posts);
     } 

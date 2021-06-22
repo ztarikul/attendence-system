@@ -84,22 +84,44 @@ class EmployeeController extends Controller
     {
         //
         // dd($request);
+        
         $user = User::find($id);
      
-        $this->validate($request,[
+        // $this->validate($request,[
+        //     'department'=> 'required',
+        //     'designation'=> 'required',
+        //     'email'=> 'required',
+        //     'phone_number'=> 'required',  
+            
+        // ]);
+        
+        $input = request()->validate([
             'department'=> 'required',
             'designation'=> 'required',
             'email'=> 'required',
-            'phone_number'=> 'required',  
-            
+            'phone_number'=> 'required', 
         ]);
-         
+
         if(request('emp_image')){
-            $user['emp_image'] = request('emp_image')->store('images');
+           $input['emp_image'] = request('emp_image')->store('images');
+           $user->emp_image = $input['emp_image'];
         }
 
+        $user->department = $input['department'];
+        $user->designation = $input['designation'];
+        $user->email = $input['email'];
+        $user->phone_number = $input['phone_number'];
 
+        $user->update();
+
+
+
+
+<<<<<<< HEAD
         $user->update($request->all());//--UPDATE EMPLOYEE'S INFORMATION QUERY--//
+=======
+        // $user->update($request->all());
+>>>>>>> bd185141cc5354e8b583a0f014ce459e59f7c94f
         // dd($user);
         return redirect()->route('employee.index');
     }
