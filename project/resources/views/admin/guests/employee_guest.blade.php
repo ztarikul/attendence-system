@@ -54,7 +54,7 @@
                 <label for="file"><b>Image</b></label>
                 <input type="file" style="width:50%" class="form-control" name="guest_image" id="guest_image">
             </div> -->
-
+    <!-- webcam query -->
             <div class="col">
           
             <div id="my_camera"></div> 

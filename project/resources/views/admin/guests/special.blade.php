@@ -39,7 +39,7 @@
 
         <input type="hidden"  name="guest_status" value="special_guest" >
         </div>
-                
+                 <!-- webcam query -->  
                 <div id="my_camera"></div> 
                 <script language="JavaScript">
                 Webcam.set({

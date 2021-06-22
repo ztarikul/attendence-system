@@ -23,19 +23,19 @@ class GuestController extends Controller
     public function employeeindex()
     {
         //
-        $users = User::all();
+        $users = User::all();//--EMPLOYEE GUEST--//
         return view('admin.guests.employee_guest', ['users' => $users]);
     }
     public function managementindex()
     {
         //
-        $users = User::all();
+        $users = User::all();//--MANAGEMENT GUEST-//
         return view('admin.guests.management', ['users' => $users]);
     }
     public function specialindex()
     {
         //
-        $users = User::all();
+        $users = User::all();//--SPECIAL FORM GUEST--//
         return view('admin.guests.special', ['users' => $users]);
     }
 
@@ -55,7 +55,7 @@ class GuestController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request)//guest token query//
     {
         //
         // dd($request);
@@ -70,7 +70,7 @@ class GuestController extends Controller
         
         $id = $inputs['user_id'];
 
-
+        // webcam image find query //
         $image = $request->get('guest_image');  // your base64 encoded
         $image = str_replace('data:image/jpeg;base64,', '', $image);
         $image = str_replace(' ', '+', $image);
@@ -90,7 +90,7 @@ class GuestController extends Controller
         $guest = new Guest($inputs);
         
         $guest->save();
-        $users = Guest::latest('id')->first();
+        $users = Guest::latest('id')->first();//new guest entry//
 
         return view('admin.guests.guest_token', ['users' => $users]);
     }

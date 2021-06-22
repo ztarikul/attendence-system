@@ -18,7 +18,7 @@
 
 </style>
 
-
+<!-- print guest data -->
 <body>
 <h2>TOKEN NO: {{$users->id}}</h2>
 <h6>Guest Name: {{$users->name}}</h6>

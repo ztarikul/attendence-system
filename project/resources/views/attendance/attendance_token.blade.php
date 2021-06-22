@@ -18,9 +18,9 @@
 
 </style>
 
-
+<!-- print employee data -->
 <body>
-<h2>TOKEN NO: {{$user->id}}</h2>
+<h2>TOKEN NO: {{$user->id}}</h2> 
 <h6>Name: {{$user->name}}</h6>
 <h6>Department: {{$user->department}}</h6>
 <h6>Designation: {{$user->designation}}</h6>

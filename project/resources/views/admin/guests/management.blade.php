@@ -44,7 +44,7 @@
 
         <input type="hidden"  style="width:50%" class="form-control" name="guest_status" value="management_guest" id="title" aria-describedby="" placeholder="Enter Guest Status">
         </div>
-                
+                 <!-- webcam query -->  
                 <div id="my_camera"></div> 
                 <script language="JavaScript">
                 Webcam.set({

@@ -18,7 +18,7 @@ class InvoiceController extends Controller
         
         $employee = Employee::find($id);
 
-        return view('pdf', ['employee' =>$employee]);
+        return view('pdf', ['employee' =>$employee]);//EMPLOYEE DATA PDF//
 
         // echo "Employee name :" . $employee->name . "<br>";
         // echo "Employee Ref ID :" . $employee->emp_ref_id. "<br>";
@@ -29,7 +29,7 @@ class InvoiceController extends Controller
 
 
     }
-
+   //EMPLOYEE GUEST DATA PDF//
     public function print_page(){
         $data = Employee::all();
         $pdf = PDF::loadView('pdf');

@@ -17,15 +17,15 @@ use Illuminate\Support\Facades\Auth;
 // });
 
 Auth::routes();
-
+//----GO TO HOME----//
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/post/{post}', [PostController::class, 'show'])->name('post');
-
+//----GO TO SEARCH BAR----//
 Route::post('/search', [HomeController::class, 'search_employee'])->name('search.employee');
-
+//----GO TO LOGIN & REGISTRATION VERIFICATION----//
 Route::middleware('auth')->group(function(){
-
+//----GO TO ADMIN DASHBOARD----//
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
 Route::get('/admin/posts/create', [PostController::class, 'create'])->name('post.create');
@@ -78,34 +78,39 @@ Route::post('/user_role_deleted/{user}', [RoleController::class, 'user_role_dele
 Route::resource('category', CategoryController::class);
 
 // Route::resource('employee', EmployeeController::class);
-
+//EMPLOYEE DATA PDF//
 Route::get('/emp_print/{id}', [InvoiceController::class, 'emp_data_print'])->name('emp_data_print');
+//EMPLOYEE GUEST DATA PDF//
 Route::get('/print_page', [InvoiceController::class, 'print_page'])->name('print.page');
 
 
-
+//----GO TO ADMIN DASHBOARD AND SHOW REPORT FORM----//
 Route::get('/admin_reports', [AdminController::class, 'admin_reports'])->name('admin.reports');
-
+//---- GO TO ADMIN DASHBOARD AND SHOW TODAY'S EMPLOYEE GUEST----//
 Route::get('/today_emp_guest', [AdminController::class, 'today_emp_guest'])->name('admin.today_emp_guest');
+//---- GO TO ADMIN DASHBOARD AND SHOW TODAY'S MANAGEMENT GUEST----//
 Route::get('/today_management_guest', [AdminController::class, 'today_management_guest'])->name('admin.today_management_guest');
+//----GO TO ADMIN DASHBOARD AND SHOW TODAY'S SPECIAL GUEST----//
 Route::get('/today_special_guest', [AdminController::class, 'today_special_guest'])->name('admin.today_special_guest');
-
+//----GO TO ADMIN DASHBOARD AND SHOW REPORTS----//
 Route::post('/report_generates', [AdminController::class, 'report_generates'])->name('report.generates');
 
-
+//----GO TO MANAGEMENT DASHBOARD----//
 Route::resource('guest', GuestController::class);
-
+//----GO TO MANAGEMENT DASHBOARD AND SHOW EMPLOYEE GUEST FORM ----//
 Route::get('/guest_employee', 'GuestController@employeeindex')->name('guest.employee');
+//----GO TO MANAGEMENT DASHBOARD AND SHOW MANAGEMENT GUEST FORM ----//
 Route::get('/management', 'GuestController@managementindex')->name('guest.management');
+//----GO TO MANAGEMENT DASHBOARD AND SHOW SPECIAL GUEST FORM ----//
 Route::get('/special', 'GuestController@specialindex')->name('guest.special');
-
+//----GO TO ADMIN DASHBOARD AND SHOW ALL EMPLOYEE DETAIL'S----//
 Route::get('/view_all_employee','GuestController@view_employee')->name('guest.view_all_employee');
-
+//----GO TO MANAGEMENT DESHBOARD----//
 Route::resource('attendance', AttendanceController::class);
 Route::get('/emp_getToken/{id}', 'AttendanceController@attendance_get_token')->name('attendance.get_token');
-
+//----GO TO MANAGEMENT DASHBOARD----//
 Route::resource('employee', EmployeeController::class);
-
+//----GO TO MANAGEMENT DASHBOARD AND SHOW ALL EMPLOYEE DETAIL'S----//
 Route::get('/manager_view_employee', 'EmployeeController@manager_view_employee')->name('employee.view_employee');
 
 

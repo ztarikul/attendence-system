@@ -18,7 +18,7 @@ class AttendanceController extends Controller
     {
         //
 
-        $attendances = Attendance::all();
+        $attendances = Attendance::all();//SHOW ALL EMPLOYEE//
         // dd($attendances);
         return view('attendance.view_all_employee', ['attendances' => $attendances]);
     }
@@ -88,7 +88,7 @@ class AttendanceController extends Controller
     {
         //
     }
-
+    //EMPLOYEE TOKEN QUERY//
     public function attendance_get_token($id){
         // dd($id);
         $attendance = Attendance::where('user_id', $id)->first();

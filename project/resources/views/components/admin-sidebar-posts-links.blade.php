@@ -26,7 +26,7 @@
 
 @endif
 
-<!--Admin -->
+<!--Admin sidebar-->
 @if(auth()->user()->userHasRole('Admin'))
 
 <li class="nav-item">

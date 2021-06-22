@@ -15,7 +15,7 @@ class EmployeeController extends Controller
     public function index()
     {
         //
-        $users = User::all();
+        $users = User::all();//--ALL EMPLOYEE INFORMATION QUERY--//
         return view('admin.guests.view_all_employee',['users'=> $users]);
     }
     
@@ -24,7 +24,7 @@ class EmployeeController extends Controller
     public function manager_view_employee()
     {
         //
-        $users = User::all();
+        $users = User::all();//--ALL EMPLOYEE INFORMATION QUERY--//
         return view('admin.guests.view_all_employee',['users'=> $users]);
     }
     /**
@@ -69,7 +69,7 @@ class EmployeeController extends Controller
     public function edit($id)
     {
         //
-        $user = User::find($id);
+        $user = User::find($id);//--EDIT QUERY--//
         return view('admin.guests.edit', ['user'=> $user] );
     }
 
@@ -99,7 +99,7 @@ class EmployeeController extends Controller
         }
 
 
-        $user->update($request->all());
+        $user->update($request->all());//--UPDATE EMPLOYEE'S INFORMATION QUERY--//
         // dd($user);
         return redirect()->route('employee.index');
     }
@@ -115,7 +115,7 @@ class EmployeeController extends Controller
         //
 
         $employee = User::find($id);
-        $employee->delete();
+        $employee->delete();//--DELETE EMPLOYEE'S INFORMATION QUERY--//
         return redirect()->route('employee.index');
     }
 }
