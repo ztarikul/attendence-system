@@ -127,5 +127,6 @@ Route::resource('employee', EmployeeController::class);
 //----GO TO MANAGEMENT DASHBOARD AND SHOW ALL EMPLOYEE DETAIL'S----//
 Route::get('/manager_view_employee', 'EmployeeController@manager_view_employee')->name('employee.view_employee');
 
+Route::get('emp_name_search', 'EmployeeController@emp_name_search');
 
 });

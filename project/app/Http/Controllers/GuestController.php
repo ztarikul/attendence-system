@@ -66,7 +66,7 @@ class GuestController extends Controller
     public function store(Request $request)
     {
         //
-        dd($request);
+        // dd($request);
         $inputs = request()->validate([
             'user_id' => 'required',
             'name'=>'required',

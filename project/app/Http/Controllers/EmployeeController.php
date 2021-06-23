@@ -141,4 +141,19 @@ class EmployeeController extends Controller
         $employee->delete();//--DELETE EMPLOYEE'S INFORMATION QUERY--//
         return redirect()->route('employee.index');
     }
+
+
+
+
+    public function emp_name_search(Request $request){
+        if($request->has('q')){
+            $q=$request->q;
+            $result = User::where('user_ref_id', 'like', '%'.$q.'%')->get();
+            return response()->json(['data' =>$result]);
+
+        }else{
+            return view('admin.guests.employee_guest');
+        }
+        
+    }
 }
