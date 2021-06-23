@@ -34,8 +34,8 @@
 
 
                 <div class="form-group" style="color:black;">
-                    <label for="title"><b>ID</b></label>
-                    <input type="text" style="width:50%" class="form-control my-3 search-input" name="q" id="title" aria-describedby="" placeholder="enter employee id">
+                    <label for="title"><b>Employee ID</b></label>
+                    <input type="text" style="width:50%" class="form-control my-3 search-input" name="user_id" id="title" aria-describedby="" placeholder="enter employee id">
                     
                     
                 </div>
@@ -73,7 +73,7 @@
                                         $.each(res.data, function(index,data){
                                             _html+='<li>'+data.name+'</li>';
                                         });
-                                       $("'search-result").html(_html);
+                                       $(".search-result").html(_html);
                                     }
                                 })
                             }
@@ -85,8 +85,13 @@
 
 
                 <div class="form-group" style="color:black;">
-                    <label for="title"><b>Name</b></label>
-                    <input type="text" style="width:50%" class="form-control" name="name" id="name" aria-describedby="" placeholder="enter name">
+                    <label for="title"><b>Employee Name</b></label>
+                    <input type="text" style="width:50%" class="form-control" name="user_name" id="name" aria-describedby="" placeholder="enter employee name">
+                </div>
+
+                <div class="form-group" style="color:black;">
+                    <label for="title"><b>Guest Name</b></label>
+                    <input type="text" style="width:50%" class="form-control" name="name" aria-describedby="" placeholder="enter guest name">
                 </div>
 
                 <!-- <div class="form-group" style="color:black;">

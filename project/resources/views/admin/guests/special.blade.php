@@ -7,30 +7,49 @@
 <div class="row">
         <div class="col-sm-6">
 
-        <div class="form-group">
-        <label for="category">User ID</label>
-        <select name="user_id" id="">
-        <option disabled selected value> -- select an option -- </option>
-                @foreach($users as $user)
-                <option value="{{$user->id}}">{{$user->name}} (ID: {{$user->user_ref_id}} DEPT: {{$user->department}})</option>
-                @endforeach
-        </select>
+        <div class="form-group" style="color:black;">
+        <label for="title"><b>Employee ID</b></label>
+        <input type="text" style="width:50%" class="form-control my-3 search-input" name="user_id" id="title" aria-describedby="" placeholder="enter employee id">
+        
+        
         </div>
 
-        <div class="form-group">
-        <label for="category">User Name</label>
-        
-        <select name="user_id" id="">
-        <option disabled selected value> -- select an option -- </option>
-                @foreach($users as $user)
-                <option value="{{$user->id}}">{{$user->user_ref_id}} (Name: {{$user->name}} DEPT: {{$user->department}})</option>
-                @endforeach
-        </select>
-        </div>
+        <script type="text/javascript">
+                    $(document).ready(function(){
+                        $(".search-input").on('keyup',function(){
+                            var _q=$(this).val();
+                            if(_q.length>=0){
+                                $.ajax({
+                                    url:"{{url('emp_name_search')}}",
+                                    data: {
+                                        q:_q
+                                    },
+                                    dataType:'json',
+                                    beforeSend:function(){
+                                        // $(".search-result").html('<li>Loading...</li>');
+                                    },
+                                    success:function(res){
+
+                                        // console.log(res.data[0].name);
+
+                                        $('#name').val(res.data[0].name);
+
+                                        var _html='';
+                                        $.each(res.data, function(index,data){
+                                            _html+='<li>'+data.name+'</li>';
+                                        });
+                                       $(".search-result").html(_html);
+                                    }
+                                })
+                            }
+                        });
+                    });
+
+                </script>
 
 
         <div class="form-group" style="color:black;">
-        <label for="title"><b>Name</b></label>
+        <label for="title"><b>Guest Name</b></label>
         <input type="text" style="width:50%" class="form-control" name="name" id="title" aria-describedby="" placeholder="enter name">
         </div>
 
@@ -42,7 +61,7 @@
         
         <div class="form-group" style="color:black;">
         <label for="title"><b>Reference Name</b></label>
-        <input type="text" style="width:50%" class="form-control" name="user_name" id="title" aria-describedby="" placeholder="enter employee name">
+        <input type="text" id="name" style="width:50%" class="form-control" name="user_name" id="title" aria-describedby="" placeholder="enter employee name">
         </div>
 
         <div class="form-group" style="color:black;">

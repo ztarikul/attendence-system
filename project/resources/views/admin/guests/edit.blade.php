@@ -36,14 +36,61 @@
         <input type="text" class="form-control" style="width:70%"  value="{{$user->user_ref_id}}" id="title" aria-describedby="" placeholder="enter employee id">
     </div>
 
+
+
+
     <div class=form-group>
     <img width="100" height="100" src="/storage/{{$user->emp_image}}" alt="">
     </div>
+
+
     <div class="form-group">
         <label for="file"><b>Image</b></label>
-        </div>
-        <input name="emp_image" type="file" style="width:70%" class="btn btn-success" id="emp_image">
+    </div>
+
+    <input name="emp_image" type="file" style="width:70%" class="btn btn-success" id="emp_image">
+
+
+
+
+    <div class="form-group" style="color:black;">
+
     
+    </div>
+         <!-- webcam query -->  
+        <div id="my_camera"></div> 
+        <script language="JavaScript">
+        Webcam.set({
+        width: 320,
+        height: 220,
+        image_format: 'jpeg',
+        jpeg_quality: 90
+        });
+        Webcam.attach('#my_camera');
+        
+        
+        function take_snapshot() {
+        
+        // take snapshot and get image data
+        Webcam.snap(function(data_uri){
+        $(".image-tag").val(data_uri);
+        document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+        });
+        }
+
+        </script>
+        <div id="results"></div>
+        <div class="form-group">
+        <br>
+        <input class="btn btn-success" type=button value="Take Snapshot" onClick="take_snapshot()" style="margin:middle;" />
+        <input type="hidden" name="emp_image_from_snap" class="image-tag">
+        </div>
+
+
+
+
+
+
     </div>
     </div>
     <div class="form-group">

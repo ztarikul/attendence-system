@@ -129,4 +129,6 @@ Route::get('/manager_view_employee', 'EmployeeController@manager_view_employee')
 
 Route::get('emp_name_search', 'EmployeeController@emp_name_search');
 
+
+
 });

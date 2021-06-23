@@ -46,6 +46,7 @@
 }
 
 .zoom:hover {
+  border: 2px solid black;
   -ms-transform: scale(5.25); /* IE 9 */
   -webkit-transform: scale(5.25); /* Safari 3-8 */
   transform: scale(7.7); 
@@ -68,7 +69,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('home')}}">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('admin.index')}}">
         <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-home"></i>
         </div>

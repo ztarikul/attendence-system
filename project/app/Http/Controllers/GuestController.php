@@ -72,7 +72,8 @@ class GuestController extends Controller
             'name'=>'required',
             'phone_number' => 'required',
             'user_name' => 'required',
-            'guest_status' => 'required'
+            'guest_status' => 'required',
+            'guest_image' => 'required'
         ]);
         $inputs['user_ref_id'] = $request['user_id'];
         

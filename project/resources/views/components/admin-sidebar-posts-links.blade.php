@@ -8,6 +8,7 @@
    <a class="nav-link collapsed" href="{{route('admin.index')}}" style="color: white;"> <i class="fas fa-tasks"></i><span>Management</span></a> 
    <a class="nav-link collapsed" href="{{route('employee.view_employee')}}" style="color: white;"> <i class="fas fa-user-friends"></i><span>Employee</span></a> 
    <a class="nav-link collapsed" href="{{route('attendance.index')}}" style="color: white;"> <i class="fas fa-user-check"></i><span>Today Meal</span></a> 
+   <a class="nav-link collapsed" target="_blank" href="http://localhost/finger/zktest.php" style="color: white;"> <i class="fas fa-user-check"></i><span>Start Server</span></a> 
     
     
     

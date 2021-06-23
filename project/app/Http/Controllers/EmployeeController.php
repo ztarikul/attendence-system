@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\User;
+
 
 class EmployeeController extends Controller
 {
@@ -110,6 +113,20 @@ class EmployeeController extends Controller
            $input['emp_image'] = request('emp_image')->store('images');
            $user->emp_image = $input['emp_image'];
         }
+
+        if(request('emp_image_from_snap')){
+            // dd($request['emp_image_from_snap']);
+            $image = $request->get('emp_image_from_snap');  // your base64 encoded
+            $image = str_replace('data:image/jpeg;base64,', '', $image);
+            $image = str_replace(' ', '+', $image);
+            
+            $imagePath= 'images/'. Str::random(20) . '.jpeg';
+            Storage::disk('public')->put($imagePath, base64_decode($image));
+            $input['emp_image_from_snap'] = $imagePath;
+            $user->emp_image = $input['emp_image_from_snap'];
+        }
+
+
 
         $user->department = $input['department'];
         $user->designation = $input['designation'];
