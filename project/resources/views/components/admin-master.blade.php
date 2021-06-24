@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
   <!-- Custom styles for this template-->
   <link href="{{asset('css/sb-admin-2.css')}}" rel="stylesheet">
+  <link href="{{asset('css/webcam.css')}}" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-webcam/1.0.0/jquery.webcam.js"></script>
 
 

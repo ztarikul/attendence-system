@@ -1,4 +1,6 @@
 <x-admin-master>
+
+
 @section('content')
 <h1 style="color:blue">Special Guest</h1>
 
@@ -8,7 +10,7 @@
         <div class="col-sm-6">
 
         <div class="form-group" style="color:black;">
-        <label for="title"><b>Employee ID</b></label>
+        <label for="title"><b>Employee ID<span style="color: red;">*</span></b></label>
         <input type="text" style="width:50%" class="form-control my-3 search-input" name="user_id" id="title" aria-describedby="" placeholder="enter employee id">
         
         
@@ -49,7 +51,7 @@
 
 
         <div class="form-group" style="color:black;">
-        <label for="title"><b>Guest Name</b></label>
+        <label for="title"><b>Guest Name<span style="color: red;">*</span></b></label>
         <input type="text" style="width:50%" class="form-control" name="name" id="title" aria-describedby="" placeholder="enter name">
         </div>
 
@@ -60,12 +62,12 @@
 
         
         <div class="form-group" style="color:black;">
-        <label for="title"><b>Reference Name</b></label>
+        <label for="title"><b>Reference Name<span style="color: red;">*</span></b></label>
         <input type="text" id="name" style="width:50%" class="form-control" name="user_name" id="title" aria-describedby="" placeholder="enter employee name">
         </div>
 
         <div class="form-group" style="color:black;">
-        <label for="title"><b>Phone Number</b></label>
+        <label for="title"><b>Phone Number<span style="color: red;">*</span></b></label>
         <input type="text"  style="width:50%" class="form-control" name="phone_number" id="title" aria-describedby="" placeholder="enter phone number">
         </div>
 

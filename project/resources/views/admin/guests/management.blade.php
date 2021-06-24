@@ -8,7 +8,7 @@
         <div class="col-sm-6">
 
         <div class="form-group" style="color:black;">
-        <label for="title"><b>Employee ID</b></label>
+        <label for="title"><b>Employee ID<span style="color: red;">*</span></b></label>
         <input type="text" style="width:50%" class="form-control my-3 search-input" name="user_id" id="title" aria-describedby="" placeholder="enter employee id">
      
         </div>
@@ -49,9 +49,15 @@
 
                 </script>
 
+        <div class="form-group" style="color:black;">
+        <label for="title"><b>Management Name<span style="color: red;">*</span></b></label>
+        <input type="text" id="name" style="width:50%" class="form-control" name="user_name" id="title" aria-describedby="" >
+        </div>
+
+
 
         <div class="form-group" style="color:black;">
-        <label for="title"><b>Guest Name</b></label>
+        <label for="title"><b>Guest Name<span style="color: red;">*</span></b></label>
         <input type="text" style="width:50%" class="form-control" name="name" id="title" aria-describedby="" placeholder="enter name">
         </div>
 
@@ -60,13 +66,10 @@
         <input type="text"  style="width:50%" class="form-control" name="user_ref_id" id="title" aria-describedby="" placeholder="enter refer id">
         </div> -->
 
-        <div class="form-group" style="color:black;">
-        <label for="title"><b>Management Name</b></label>
-        <input type="text" id="name" style="width:50%" class="form-control" name="user_name" id="title" aria-describedby="" >
-        </div>
+        
 
         <div class="form-group" style="color:black;">
-        <label for="title"><b>Phone Number</b></label>
+        <label for="title"><b>Phone Number<span style="color: red;">*</span></b></label>
         <input type="text"  style="width:50%" class="form-control" name="phone_number" id="title" aria-describedby="" placeholder="enter phone number">
         </div>
 
@@ -83,10 +86,10 @@
                 <div id="my_camera"></div> 
                 <script language="JavaScript">
                 Webcam.set({
-                width: 320,
-                height: 220,
+                width: 300,
+                height: 200,
                 image_format: 'jpeg',
-                jpeg_quality: 90
+                jpeg_quality: 90,
                 });
                 Webcam.attach('#my_camera');
                 

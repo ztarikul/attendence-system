@@ -4,6 +4,14 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Guest;
 
+
+
+
+use Mike42\Escpos\Printer; 
+use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
+use Mike42\Escpos\PrintConnectors\FilePrintConnector;
+use Mike42\Escpos\PrintConnectors\NetworkPrintConnector;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -67,17 +75,22 @@ class GuestController extends Controller
     {
         //
         // dd($request);
+
+        $ref_id = $request['user_id'];
+
+        $user = User::where('user_ref_id', $ref_id)->first();
+        
         $inputs = request()->validate([
-            'user_id' => 'required',
             'name'=>'required',
             'phone_number' => 'required',
             'user_name' => 'required',
             'guest_status' => 'required',
             'guest_image' => 'required'
         ]);
+        $inputs['user_id'] = $user->id;
         $inputs['user_ref_id'] = $request['user_id'];
         
-        $id = $inputs['user_id'];
+        
 
         // webcam image find query //
         $image = $request->get('guest_image');  // your base64 encoded
@@ -87,16 +100,13 @@ class GuestController extends Controller
         $imagePath= 'images/'. Str::random(20) . '.jpeg';
         Storage::disk('public')->put($imagePath, base64_decode($image));
         $inputs['guest_image'] = $imagePath;
-        // dd($imagePath);
 
-        // if(request('guest_image')){
-        //     $inputs['guest_image'] = request('guest_image')->store('images');
-        // }
+    
       
 
-        // dd($users);
 
         $guest = new Guest($inputs);
+       
         
         $guest->save();
         $users = Guest::latest('id')->first();//new guest entry//
@@ -105,7 +115,31 @@ class GuestController extends Controller
         // New Guest 
 
 
-        return view('admin.guests.guest_token', ['users' => $users]);
+        try {
+            $connector = new WindowsPrintConnector("pos");
+            $printer = new Printer($connector);
+            $printer -> text("\nGLOBE GROUP LTD.");
+            $printer -> text("\nTOKEN NO : ". $users->id);
+            $printer -> text("\nGuest Name : ". $users->name);
+            $printer -> text("\nEmployee Refer ID : ". $users->user_ref_id);
+            $printer -> text("\nEmployee Name :". $users->user_name);
+            $printer -> text("\nDate&Time : ". $users->created_at);
+            $printer -> text("\n Thank You");
+            $printer -> text("\n --------------");
+            $printer -> text("\n --------------");
+    
+         
+            $printer -> cut();
+
+            $printer -> close();
+        } catch(Exception $e) {
+            echo "Couldn't print to this printer: " . $e -> getMessage() . "\n";
+        }
+    
+
+
+
+        // return view('admin.guests.guest_token', ['users' => $users]);
     }
 
     /**

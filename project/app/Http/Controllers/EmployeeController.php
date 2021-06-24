@@ -134,6 +134,7 @@ class EmployeeController extends Controller
         $user->phone_number = $input['phone_number'];
 
         $user->update();
+        
 
 
 

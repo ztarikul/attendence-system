@@ -34,7 +34,7 @@
 
 
                 <div class="form-group" style="color:black;">
-                    <label for="title"><b>Employee ID</b></label>
+                    <label for="title"><b>Employee ID<span style="color: red;">*</span></b></label>
                     <input type="text" style="width:50%" class="form-control my-3 search-input" name="user_id" id="title" aria-describedby="" placeholder="enter employee id">
                     
                     
@@ -90,7 +90,7 @@
                 </div>
 
                 <div class="form-group" style="color:black;">
-                    <label for="title"><b>Guest Name</b></label>
+                    <label for="title"><b>Guest Name<span style="color: red;">*</span></b></label>
                     <input type="text" style="width:50%" class="form-control" name="name" aria-describedby="" placeholder="enter guest name">
                 </div>
 
@@ -102,7 +102,7 @@
                 
 
                 <div class="form-group" style="color:black;">
-                    <label for="title"><b>Phone Number</b></label>
+                    <label for="title"><b>Phone Number<span style="color: red;">*</span></b></label>
                     <input type="text" style="width:50%" class="form-control" name="phone_number" id="title" aria-describedby="" placeholder="enter phone number">
                 </div>
 
