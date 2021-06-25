@@ -104,7 +104,8 @@ class EmployeeController extends Controller
             'department'=> 'required',
             'designation'=> 'required',
             'email'=> 'required',
-            'phone_number'=> 'required', 
+            'phone_number'=> 'required',
+            'user_ref_id'=> 'required' 
         ]);
 
 
@@ -132,6 +133,7 @@ class EmployeeController extends Controller
         $user->designation = $input['designation'];
         $user->email = $input['email'];
         $user->phone_number = $input['phone_number'];
+        $user->user_ref_id = $input['user_ref_id'];
 
         $user->update();
         

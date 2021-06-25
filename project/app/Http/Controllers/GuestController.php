@@ -139,7 +139,7 @@ class GuestController extends Controller
 
 
 
-        // return view('admin.guests.guest_token', ['users' => $users]);
+        return redirect()->back();
     }
 
     /**

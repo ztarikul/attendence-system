@@ -28,7 +28,7 @@
     <tr>
     <!-- @method('DELETE') -->
       
-      <td>{{ $attendance->user_id }}</td>
+      <td>{{ $attendance->user_ref_id }}</td>
       <td>{{ $attendance->status}}</td>
       <td>{{ $attendance->token_status}}</td>
       <td>{{ $attendance->date}}</td>

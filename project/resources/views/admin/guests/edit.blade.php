@@ -33,7 +33,7 @@
     <div class="col-sm-6">
     <div class="form-group">
         <label for="title"><b>Employee ID</b></label>
-        <input type="text" class="form-control" style="width:70%"  value="{{$user->user_ref_id}}" id="title" aria-describedby="" placeholder="enter employee id">
+        <input type="text" class="form-control" style="width:70%" name="user_ref_id" value="{{$user->user_ref_id}}" id="title" aria-describedby="" placeholder="enter employee id">
     </div>
 
 
