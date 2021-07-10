@@ -10,28 +10,17 @@
             <form method="post" action="{{route('guest.store')}}" enctype="multipart/form-data">
                 @csrf
 
-
-                <!-- <div class="form-group">
-                    <label for="category">Employee</label>
-                    <select name="user_id" id="">
-                    <option disabled selected value> -- select an option -- </option>
-                        @foreach($users as $user)
-                        
-                        <option value="{{$user->id}}">{{$user->name}} (ID: {{$user->user_ref_id}} DEPT: {{$user->department}})</option>
-                        @endforeach
+                <div class="form-group" style="color:black;">
+                    <label for="title"><b>Guest Type<span style="color: red;">*</span></b></label>
+                    <select name="guest_type" class="form-select"  style="width:50%" aria-label="Default select example">
+                        <option selected>Select one</option>
+                        <option value="meet">Meet</option>
+                        <option value="work">Work</option>
+                       
                     </select>
-                </div>
-                <div class="form-group">
-                    <label for="category">Employee</label>
                     
-                    <select name="user_id" id="">
-                    <option disabled selected value> -- select an option -- </option>
-                        @foreach($users as $user)
-                        <option value="{{$user->id}}">{{$user->user_ref_id}} (Name: {{$user->name}} DEPT: {{$user->department}})</option>
-                        @endforeach
-                    </select>
-                </div> -->
-
+                </div>
+    
 
                 <div class="form-group" style="color:black;">
                     <label for="title"><b>Employee ID<span style="color: red;">*</span></b></label>
@@ -40,11 +29,6 @@
                     
                 </div>
                 
-                <!-- <div class="form-group" style="color:black;">
-                    <label for="title"><b>Employee Name</b></label>
-                    <input type="text"  style="width:50%" class="form-control my-3 search-result" name="user_name" id="title" aria-describedby="">
-                </div> -->
-
 
 
 
@@ -94,11 +78,6 @@
                     <input type="text" style="width:50%" class="form-control" name="name" aria-describedby="" placeholder="enter guest name">
                 </div>
 
-                <!-- <div class="form-group" style="color:black;">
-                    <label for="title"><b>Employee Referance Id</b></label>
-                    <input type="text" style="width:50%" class="form-control" name="user_ref_id" id="title" aria-describedby="" placeholder="enter refer id">
-                </div> -->
-
                 
 
                 <div class="form-group" style="color:black;">
@@ -109,7 +88,34 @@
 
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-3">
+        
+        <div class="form-group" style="color:black;">
+            <label for="title"><b>Guest Purpose<span style="color: red;">*</span></b></label>
+            <textarea type="text" style="width:100%" class="form-control" name="guest_purpose" id="title" aria-describedby="" placeholder="Write a reason"></textarea>
+        </div>
+        <div class="form-group" style="color:black;">
+            <label for="title"><b>Department<span style="color: red;">*</span></b></label>
+            <input type="text" style="width:100%" class="form-control" name="emp_dept" id="title" aria-describedby="" placeholder="Enter Department">
+        </div>
+
+
+
+        <div class="form-group" style="color:black;">
+            <label for="title"><b>RFID<span style="color: red;">*</span></b></label>
+            <select name="guest_rfid" class="form-select"  style="width:100%" aria-label="Default select example">
+                <option selected>Available RFID</option>
+                @foreach($rfids as $rfid)
+                <option value="{{$rfid->id}}">{{$rfid->rfid}}</option>
+                @endforeach
+                
+            </select>
+            
+        </div>
+
+
+        
+
 
             <div class="form-group" >
                 <input type="hidden"  name="guest_status" value="emp_guest">
@@ -121,13 +127,13 @@
                 <input type="file" style="width:50%" class="form-control" name="guest_image" id="guest_image">
             </div> -->
     <!-- webcam query -->
-            <div class="col">
+           
           
             <div id="my_camera"></div> 
             <script language="JavaScript">
             Webcam.set({
-                width: 320,
-                height: 220,
+                width: 300,
+                height: 200,
                 image_format: 'jpeg',
                 jpeg_quality: 90
             });
@@ -144,17 +150,24 @@
             }
 
             </script>
-                <div id="results"></div>
+         
+
+         
                 <div class="form-group">
                 <br>
                 <input class="btn btn-success" type=button value="Take Snapshot" onClick="take_snapshot()" style="margin:middle;" />
                 <input type="hidden" name="guest_image" class="image-tag">
                 </div>
-
-            </div>
-
-
         </div>
+
+        <div class="col-sm-3">
+            <div class="my_camera" id="results"></div>
+        </div>
+
+           
+
+
+       
 
 
     </div>

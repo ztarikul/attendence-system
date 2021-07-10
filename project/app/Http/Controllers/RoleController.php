@@ -70,7 +70,7 @@ class RoleController extends Controller
 
     public function add_user_role(Request $request, $id){
         $user = User::find($id);
-        $roles = Role::all();
+        $roles = Role::where('type', 1)->get();
         return view('admin.roles.add_user_role', ['roles'=> $roles, 'user'=>$user]);
     }
 
@@ -105,9 +105,19 @@ class RoleController extends Controller
 
 
     public function user_role_deleted($id){
+        // dd($_POST['role_id']);
+        $role_id = $_POST['role_id'];
         $user = User::find($id);
-        $request_role_id = $_POST['role_id'];
-        $user->roles()->detach($request_role_id);
-        return redirect()->route('user_role_manage');
+        $role = Role::find($role_id);
+        // dd($role->name);
+        if($role->name == "SuperAdmin"){
+            return redirect()->route('user_role_manage');
+        }
+        else{
+            $request_role_id = $_POST['role_id'];
+            $user->roles()->detach($request_role_id);
+            return redirect()->route('user_role_manage');
+        }
+
     }
 }

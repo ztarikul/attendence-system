@@ -1,18 +1,30 @@
-Webcam.set({
-    width: 100,
-    height: 50,
-    image_format: 'jpeg',
-    jpeg_quality: 90
-  });
-  Webcam.attach('#my_camera');
+function exportToExcel(tableID, filename = ''){
+  var downloadurl;
+  var dataFileType = 'application/vnd.ms-excel';
+  var tableSelect = document.getElementById(tableID);
+  var tableHTMLData = tableSelect.outerHTML.replace(/ /g, '%20');
   
+  // Specify file name
+  filename = filename?filename+'.xls':'export_excel_data.xls';
   
-  function take_snapshot() {
+  // Create download link element
+  downloadurl = document.createElement("a");
   
-    // take snapshot and get image data
-    Webcam.snap(function(data_uri) {
-        // display results in page
-        document.getElementById('results').innerHTML =
-            '<img src="' + data_uri + '"/>';
-    });
+  document.body.appendChild(downloadurl);
+  
+  if(navigator.msSaveOrOpenBlob){
+      var blob = new Blob(['\ufeff', tableHTMLData], {
+          type: dataFileType
+      });
+      navigator.msSaveOrOpenBlob( blob, filename);
+  }else{
+      // Create a link to the file
+      downloadurl.href = 'data:' + dataFileType + ', ' + tableHTMLData;
+  
+      // Setting the file name
+      downloadurl.download = filename;
+      
+      //triggering the function
+      downloadurl.click();
   }
+}

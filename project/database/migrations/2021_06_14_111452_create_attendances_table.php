@@ -18,11 +18,12 @@ class CreateAttendancesTable extends Migration
             $table->id();
             
             $table->integer('user_ref_id')->unsigned()->nullable();
-            $table->foreign('user_ref_id')->references('user_ref_id')->on('users');
+            $table->foreign('user_ref_id')->references('user_ref_id')->on('users')->onDelete('cascade');
             $table->string('status')->nullable();
             $table->string('token_status')->nullable();
             $table->date('date')->nullable();
             $table->time('time')->nullable();
+            $table->text('comment')->nullable();
             $table->timestamps();
         });
     }

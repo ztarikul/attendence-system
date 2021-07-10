@@ -60,7 +60,7 @@
 
 <script type="text/javascript" src="/js/webcam.min.js"></script>
 <script type="text/javascript" src="/js/webcam.js"></script>
-
+<script type="text/javascript" src="/js/extra.js"></script>
 
 
   <!-- Page Wrapper -->
@@ -168,8 +168,9 @@
           @csrf
           <input name="search_bar" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button style="height=10px;weight=20px; cursor: pointer;background-color:DodgerBlue; color:white; " type="submit">Search</button>
+          
         </form>
-
+        
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>

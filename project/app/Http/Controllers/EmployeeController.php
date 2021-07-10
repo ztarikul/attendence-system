@@ -168,7 +168,7 @@ class EmployeeController extends Controller
     public function emp_name_search(Request $request){
         if($request->has('q')){
             $q=$request->q;
-            $result = User::where('user_ref_id', 'like', '%'.$q.'%')->get();
+            $result = User::where('user_ref_id', $q)->get();
             return response()->json(['data' =>$result]);
 
         }else{

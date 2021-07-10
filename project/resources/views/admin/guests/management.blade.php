@@ -9,7 +9,7 @@
 
         <div class="form-group" style="color:black;">
         <label for="title"><b>Employee ID<span style="color: red;">*</span></b></label>
-        <input type="text" style="width:50%" class="form-control my-3 search-input" name="user_id" id="title" aria-describedby="" placeholder="enter employee id">
+        <input type="text" style="width:50%" class="form-control my-3 search-input" name="user_id_optional" id="title" aria-describedby="" placeholder="enter employee id">
      
         </div>
 
@@ -76,7 +76,7 @@
 
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-3">
 
         <div class="form-group" style="color:black;">
 
@@ -104,13 +104,16 @@
                 }
 
                 </script>
-                <div id="results"></div>
+                
                 <div class="form-group">
                 <br>
                 <input class="btn btn-success" type=button value="Take Snapshot" onClick="take_snapshot()" style="margin:middle;" />
                 <input type="hidden" name="guest_image" class="image-tag">
                 </div>
 
+        </div>
+        <div class="col-sm-3">
+            <div class="my_camera" id="results"></div>
         </div>
 
 </div>

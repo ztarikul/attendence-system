@@ -100,6 +100,9 @@ Route::get('/print_page', [InvoiceController::class, 'print_page'])->name('print
 
 //----GO TO ADMIN DASHBOARD AND SHOW REPORT FORM----//
 Route::get('/admin_reports', [AdminController::class, 'admin_reports'])->name('admin.reports');
+
+// Attendance Reports
+Route::get('/admin_attendance_reports', [AdminController::class, 'admin_attendance_reports'])->name('admin.attendance_reports');
 //---- GO TO ADMIN DASHBOARD AND SHOW TODAY'S EMPLOYEE GUEST----//
 Route::get('/today_emp_guest', [AdminController::class, 'today_emp_guest'])->name('admin.today_emp_guest');
 //---- GO TO ADMIN DASHBOARD AND SHOW TODAY'S MANAGEMENT GUEST----//
@@ -108,6 +111,8 @@ Route::get('/today_management_guest', [AdminController::class, 'today_management
 Route::get('/today_special_guest', [AdminController::class, 'today_special_guest'])->name('admin.today_special_guest');
 //----GO TO ADMIN DASHBOARD AND SHOW REPORTS----//
 Route::post('/report_generates', [AdminController::class, 'report_generates'])->name('report.generates');
+
+Route::post('/attendance_report_generates', [AdminController::class, 'attendance_report_generates'])->name('attendance_report.generates');
 
 //----GO TO MANAGEMENT DASHBOARD----//
 Route::resource('guest', GuestController::class);
@@ -119,15 +124,24 @@ Route::get('/management', 'GuestController@managementindex')->name('guest.manage
 Route::get('/special', 'GuestController@specialindex')->name('guest.special');
 //----GO TO ADMIN DASHBOARD AND SHOW ALL EMPLOYEE DETAIL'S----//
 Route::get('/view_all_employee','GuestController@view_employee')->name('guest.view_all_employee');
-//----GO TO MANAGEMENT DESHBOARD----//
+
 Route::resource('attendance', AttendanceController::class);
 Route::get('/emp_getToken/{id}', 'AttendanceController@attendance_get_token')->name('attendance.get_token');
-//----GO TO MANAGEMENT DASHBOARD----//
+Route::get('/truncate_form', 'AttendanceController@truncate_form')->name('attendance.truncate_form');
+Route::post('/truncate', 'AttendanceController@truncate')->name('attendance.truncate');
+Route::get('/attendance_data', 'AttendanceController@attendance_form')->name('attendance.form');
+Route::post('/attendance_datasheet', 'AttendanceController@attendance_datasheet')->name('attendance.datasheet');
+
 Route::resource('employee', EmployeeController::class);
-//----GO TO MANAGEMENT DASHBOARD AND SHOW ALL EMPLOYEE DETAIL'S----//
+
 Route::get('/manager_view_employee', 'EmployeeController@manager_view_employee')->name('employee.view_employee');
 
 Route::get('emp_name_search', 'EmployeeController@emp_name_search');
+
+
+
+Route::resource('rfid',  RfidController::class);
+Route::post('rfid_return',  'RfidController@return')->name('rfid.return');
 
 
 

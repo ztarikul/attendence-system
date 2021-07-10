@@ -17,10 +17,14 @@ class CreateGuestsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('name');
+            $table->string('guest_type')->nullable();
             $table->integer('user_ref_id')->unsigned()->nullable();
             $table->foreign('user_ref_id')->references('user_ref_id')->on('users');
             $table->string('user_name')->nullable();
             $table->string('phone_number');
+            $table->text('guest_purpose')->nullable();
+            $table->string('emp_dept')->nullable();
+            $table->string('guest_rfid')->nullable();
             $table->text('guest_image')->nullable();
             $table->timestamps();
         });

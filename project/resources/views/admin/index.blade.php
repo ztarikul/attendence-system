@@ -80,6 +80,11 @@
 <body>
 
 @if(auth()->user()->userHasRole('Manager'))
+<div class="row">
+<a href="{{route('rfid.index')}}"><button style="width: 20%; font-size:70%;" class="btn">RFID MANAGEMENT</button></a>
+</div>
+
+
 
 <div class="row">
   <div class="col-sm-4">
